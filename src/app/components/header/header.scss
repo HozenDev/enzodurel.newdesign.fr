@@ -1,0 +1,62 @@
+.header-container {
+    background-color: #EFEFEF;
+    height: 50px;
+    
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        
+        align-items: center;
+        height: inherit;
+        max-width: 1260px;
+        margin: auto;
+
+        // Small reset
+        ul, p {
+            margin: 0;
+            padding: 0;
+        }
+
+       
+
+        // Pages section
+        nav.right {
+            margin-left: 30px;
+            margin-right: auto;
+            
+            ul {
+                list-style: none;
+                display: flex;
+
+                li {
+                    margin-right: 2em;
+                }
+            }
+        }
+
+        // Logo section style
+        nav.center {
+            text-align: center;
+
+        }
+
+        // Actions section
+        nav.left {
+            margin-right: 30px;
+            margin-left: auto;
+            
+            ul {
+                list-style: none;
+                display: flex;
+
+                li {
+                    margin-left: 2em;
+                }
+            }  
+        }
+
+        &:hover {
+            // background-color: #EFEFEF;
+        }
+    }
+}

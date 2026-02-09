@@ -1,0 +1,28 @@
+[
+  {
+    "id": 0,
+    "title": "2048 Sunset",
+    "authors": "Durel Enzo, Villepreux Thibault",
+    "date": "2021",
+    "tags": ["Jeu", "C", "Graphique", "Son"],
+    "link": "https://github.com/HozenDev/peaceful_2048",
+    "description": "Développement du jeu '2048'. Développé en langage C sous la librairie graphique SDL1.2. La grille de jeu a été conçue avec le concept de tuiles (TileMapping) qui était très développé dans les années 80 pour les jeux 2D. J'ai donc aussi créer toute la charte graphique et conçue puis réalisé la musique.",
+    "img": {
+      "src": "",
+      "alt": ""
+    }
+  },
+  {
+    "id": 1,
+    "title": "La Fourmi de Langton",
+    "authors": "Durel Enzo, Mallepeyre Nourrane, Barra Vincent",
+    "date": "2022",
+    "tags": ["Simulation", "Python"],
+    "description": "Création d'un logiciel de simulation de la fourmi de Langton qui est une machine de Turing universelle bidimensionnelle constituée d'un ensemble de règles simples mais dont le comportement émergent est complexe. Logiciel développé sous Python 3 avec la librarie graphique PyGame. Plusieurs concepts ont été introduits dans ce travail notamment avec une approche du multiprocessing et un développement en paradigme objet.",
+    "link": "",
+    "img": {
+      "src": "",
+      "alt": ""
+    }
+  }
+]

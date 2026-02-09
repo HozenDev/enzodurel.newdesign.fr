@@ -1,0 +1,38 @@
+[
+    {
+	"date": "2020-06-30",
+	"title": "Baccalauréat Scientifique",
+	"description": "Obtention de mon baccalauréat",
+	"importance": 1
+    },
+    {
+	"date": "2022-06-30",
+	"title": "Prépa ISIMA",
+	"description": "Validation de mes années de prépas intégrées",
+	"importance": 1
+    },
+    {
+	"date": "2024-01-01",
+	"title": "Winter School à Tokyo au SIT",
+	"description": "10 jours d'échanges avec des élèves de l'université de Tokyo et séminaire sur la réalité virtuelle.",
+	"importance": 1
+    },
+    {
+	"date": "2024-08-21",
+	"title": "Premier Marathon",
+	"description": "J'ai finis mon premier Marathon",
+	"importance": 1
+    },
+    {
+	"date": "2025-01-01",
+	"title": "Ingénieur ISIMA en Informatique",
+	"description": "Obtention de mon diplome d'ingénieur en informatique",
+	"importance": 1
+    },
+    {
+	"date": "2025-12-19",
+	"title": "Master de Sciences à University of Oklahoma, Etats-Unis",
+	"description": "Obtention de mon diplome de master aux Etats-Unis",
+	"importance": 1
+    }
+]
