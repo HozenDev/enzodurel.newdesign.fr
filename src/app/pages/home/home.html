@@ -1,12 +1,13 @@
-<div id="banner-container">
+<section id="banner-container">
     <img id="background" src="assets/images/river_forest.jpg" alt="" />
     <img id="background-shadow" src="assets/images/background_lum.png" alt="" />
     <div id="logo-container">
         <img id="hozen-logo" src="assets/images/hozen_emacs_logo_zen.png" alt="" />
     </div>
-</div>
-<div id="resume-container">
-    <div id="resume">
+</section>
+<section id="resume-container">
+  <div id="resume">
+    
         <img id="profil" src="assets/images/photo_profil_crop.png" alt="" />
         <div id="presentation">
             <h1 class="white">Enzo "Hozen" Durel</h1>
@@ -22,14 +23,7 @@
                 rêvais d’être: un créateur.
             </p>
         </div>
-        <app-timeline> </app-timeline>
-        <!-- <div id="frise-container">
-                  <img src="assets/images/home_frise.svg" alt="" />
-                  <ul>
-                    <li style="transform: translate(-80px, -150px);"> 2020 - Baccalauréat Scientifique </li>
-                    <li style="transform: translate(350px, -210px);"> 2022 - Prépa ISIMA</li>
-                  </ul>
-                </div> -->
+        <app-timeline id="frise-container"> </app-timeline>
         <div id="paragraph-container">
             <p>
                 Une soif d’apprendre, de comprendre et de me rapprocher de la vérité. Je suis passioné par la
@@ -53,9 +47,18 @@
             <img src="assets/images/photo_groupe_japon.jpg" alt="" />
         </div>
     </div>
-</div>
-<div class="links">
+</section>
+<section id="links-container">
+  <div id="links">
+  <a class="link-card" href="/portfolio">
     <img id="portfolio" class="elevate" src="assets/images/link_portfolio_logo.png" alt="" />
-    <img id="cv" src="assets/images/link_cv_logo.jpg" alt="" />
+  </a>
+  <a class="link-card" href="/cv">
+        <img id="cv" class="elevate" src="assets/images/link_cv_logo.jpg" alt="" />
+  </a>
+  <a class="link-card" href="">
     <img id="freelance" class="elevate" src="assets/images/link_freelance_logo.jpg" alt="" />
-</div>
+  </a>
+  </div>
+</section>
+<app-contact></app-contact>

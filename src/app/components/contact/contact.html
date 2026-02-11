@@ -1,0 +1,62 @@
+<section class="contact-section">
+    <div class="contact-container">
+
+        <!-- INFO -->
+        <div class="contact-info">
+            <h2>Contactez-moi!</h2>
+            <p>
+              Vous avez un projet, une question, ou juste envie de dire bonjour?
+              Remplissez ce formulaire ou contactez-moi sur mes réseaux!
+            </p>
+
+            <div class="links">
+              <div class="link-group">
+                <img src="assets/logos/email.svg" alt="" />
+                <a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a>
+              </div>
+              <div class="link-group">
+                <img src="assets/logos/linkedin.svg" alt="" />
+                <a href="#">LinkedIn</a>
+              </div>
+            </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="contact-form">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+                <!-- Line 1: Name + Email -->
+                <div class="row">
+                    <div class="field">
+                        <input type="text" placeholder="Nom" formControlName="name" />
+                    </div>
+
+                    <div class="field">
+                        <input type="email" placeholder="Email" formControlName="email" />
+                    </div>
+                </div>
+
+                <!-- Line 2: Subject -->
+                <div class="row">
+                    <div class="field full">
+                        <input type="text" placeholder="Sujet"  formControlName="subject" />
+                    </div>
+                </div>
+
+                <!-- Line 3: Message -->
+                <div class="row">
+                    <div class="field full">
+                        <textarea rows="5" placeholder="Ecris ton message..." formControlName="message"></textarea>
+                    </div>
+                </div>
+
+                <!-- Line 4: Submit -->
+                <div class="row">
+                    <button type="submit">Envoyer</button>
+                    </div>
+                    
+                    </form>
+        </div>
+
+    </div>
+</section>

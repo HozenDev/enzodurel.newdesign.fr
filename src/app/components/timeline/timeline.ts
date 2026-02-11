@@ -1,8 +1,8 @@
-import { Component, Input, OnInit, signal, inject } from '@angular/core';
+import { Component, Input, ViewChild, effect, OnInit, ElementRef, AfterViewInit, HostListener, inject, signal } from '@angular/core';
 import { TimelineEvent } from '../../core/models/timeline.model';
 import { TimelineService } from '../../core/services/timeline';
 import { CommonModule } from '@angular/common';
-import { catchError } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 
 @Component({
     selector: 'app-timeline',
@@ -11,81 +11,68 @@ import { catchError } from 'rxjs';
     styleUrl: './timeline.scss'
 })
 export class Timeline implements OnInit {
+    @ViewChild('timelineWrapper', { static: true }) wrapper!: ElementRef<HTMLDivElement>;
+    @ViewChild('timelinePath') timelinePath!: ElementRef<SVGPathElement>;
 
-    @Input() events: TimelineEvent[] = [];
+    // points récupérés par HTTP
+    points = signal<TimelineEvent[]>([]);
+
+    // largeur parent responsive
+    parentWidth = signal(0);
+
+    // path de la courbe
+    pathD = signal('');
     timelineService = inject(TimelineService);
-    points: any[] = [];
-    isReady = false;
 
-    ngOnInit(): void {
-	this.timelineService
-	    .getTimelineEvents()
-	    .pipe(
-		catchError((err) => {
-		    console.log(err);
-		    throw err;
-		})
-	    )
-	    .subscribe((timelineEvents) => {
-		this.events = timelineEvents;
-		this.generatePoints();
-		this.isReady = true;
-	    });
-    }
+    ngOnInit() {
+	this.parentWidth.set(this.wrapper.nativeElement.clientWidth);
+	const w = this.parentWidth();
+	const pts = this.points();
 
-    get startPoint() {
-	return this.points?.[0];
-    }
+	const path = this.generatePath(w);
+	this.pathD.set(path);
 
-    get endPoint() {
-	return this.points?.[this.points.length - 1];
-    }
-    
-
-
-    generatePoints() {
-	if (!this.events.length) return;
-
-	const dates = this.events.map(e => new Date(e.date).getTime());
-	const min = Math.min(...dates);
-	const max = Math.max(...dates);
-
-	const width = 1000;
-	const baseY = 120;
-
-	this.points = this.events.map(e => {
-	    const time = new Date(e.date).getTime();
-
-	    const x = ((time - min) / (max - min)) * width;
-
-	    // variation verticale
-	    const importance = e.importance ?? 1;
-	    const y = baseY + Math.sin(x / 120) * 40 * importance;
-
-	    return { ...e, x, y };
+	// charger les points depuis JSON
+	this.timelineService.getTimelineEvents().subscribe((data) => {
+	    this.points.set(data);
+	    this.updatePointsOnPath();
 	});
     }
 
-    generatePath(): string {
-	if (this.points.length < 2) return '';
+    @HostListener('window:resize')
+    onResize() {
+	this.parentWidth.set(this.wrapper.nativeElement.clientWidth);
+	const w = this.parentWidth();
+	const pts = this.points();
 
-	let d = `M ${this.points[0].x},${this.points[0].y}`;
+	const path = this.generatePath(w);
+	this.pathD.set(path);
 
-	for (let i = 0; i < this.points.length - 1; i++) {
-	    const p0 = this.points[i - 1] || this.points[i];
-	    const p1 = this.points[i];
-	    const p2 = this.points[i + 1];
-	    const p3 = this.points[i + 2] || p2;
+	// setTimeout(() => this.updatePointsOnPath(), 1000);
+	this.updatePointsOnPath();
+    }
 
-	    const cp1x = p1.x + (p2.x - p0.x) / 6;
-	    const cp1y = p1.y + (p2.y - p0.y) / 6;
+    get renderedPoints(): TimelineEvent[] {
+	return this.points().filter(p => p.x !== undefined && p.y !== undefined);
+    }
 
-	    const cp2x = p2.x - (p3.x - p1.x) / 6;
-	    const cp2y = p2.y - (p3.y - p1.y) / 6;
 
-	    d += ` C ${cp1x},${cp1y} ${cp2x},${cp2y} ${p2.x},${p2.y}`;
-	}
+    // recalcul des points sur la courbe
+    updatePointsOnPath() {
+	if (!this.timelinePath) return;
+	const pathEl = this.timelinePath.nativeElement as SVGPathElement;
+	if (!pathEl) return;
+	const length = pathEl.getTotalLength();
 
-	return d;
+	this.points.set(this.points().map(p => {
+	    const distance = (p.percent / 100) * length;
+	    const pt = pathEl.getPointAtLength(distance);
+	    return { ...p, x: pt.x, y: pt.y };
+	}));
+    }
+
+    generatePath(width: number): string {
+	const h = 200;
+	return `M 0,${h*0.4} C ${width*0.15},${h} ${width*0.25},${h*0.2} ${width*0.4},${h*0.3} S ${width*0.6},${h*0.9} ${width},${h/2}`;
     }
 }

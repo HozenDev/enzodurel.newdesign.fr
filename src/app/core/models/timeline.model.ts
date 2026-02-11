@@ -1,6 +1,12 @@
 export interface TimelineEvent {
-    date: string;
+    percent: number;
     title: string;
+    
+    date?: string;
     description?: string;
-    importance?: number; // influence the height
+    icon?: number; // influence the height
+
+    // Computed fields
+    x?: number;
+    y?: number;
 }

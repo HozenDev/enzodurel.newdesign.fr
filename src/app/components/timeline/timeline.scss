@@ -1,66 +1,45 @@
-$timeline-color: #5D5D5D;
+@use "../../styles/shared.scss" as *;
 
-:host {
-    display: block;
-    grid-column: 1 / -1;
-}
+$timeline-color: #5D5D5D;
+$timeline-fill-dot: white;
 
 .timeline-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  padding: 40px 0;
+    height: 260px;
 }
 
 .timeline-svg {
-    overflow: visible;
-  width: 100%;
-  height: auto;
+    height: 100%;
+    width: 100%;
 }
 
 .timeline-path {
-  fill: none;
-  stroke: $timeline-color;
-  stroke-width: 4;
+    fill: none;
+    stroke: $timeline-color;
+    stroke-width: 4;
 }
 
 .timeline-dot {
+    fill: $timeline-fill-dot;
+    stroke: $timeline-color;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: transform 0.2s;
     transform-box: fill-box;
     transform-origin: center;
-  fill: white;
-  stroke: $timeline-color;
-  stroke-width: 3;
-  cursor: pointer;
-  transition: 0.2s;
 }
 
 .timeline-dot:hover {
-  transform: scale(1.4);
+    transform: scale(1.4);
 }
 
 .timeline-card {
-  background: white;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-  text-align: center;
-  font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
 
-  display: flex;
-  flex-direction: column;
-}
-
-.timeline-tail {
-  stroke: $timeline-color;
-  stroke-width: 4;
-}
-
-.timeline-tail-dot {
-  fill: white;
-  stroke: $timeline-color;
-  stroke-width: 4;
-}
-
-.timeline-arrow {
-  fill: $timeline-color;
+    p {
+        margin-top: 0;
+    }
 }
 

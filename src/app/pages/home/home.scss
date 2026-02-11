@@ -1,22 +1,40 @@
+$xxs: 480px;
+$xs: 768px;
+$sm: 991px;
+$md: 1280px;
+$lg: 1920px;
+$xl: 5000px;
+
+@mixin responsive($query) {
+    @media ( max-width: + $query ) {
+        @content;
+    }
+}
+
 #resume-container {
     background-color: #EEE;
-    
+    padding-bottom: 2rem;
 }
+
 #resume {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     grid-gap: 15px;
-    grid-template-rows: 405px 500px auto;
+    grid-template-rows: 405px 100px auto;
 
     max-width: 1260px;
     margin: auto;
 
-    p {
-        font-size: 16px;
+    @include responsive($md) {
+        grid-template-rows: 405px 100px auto auto;
+    }
+
+    @include responsive($sm) {
+        grid-template-rows: 405px auto auto auto auto;
     }
 
     #presentation {
-        z-index: 1;
+        z-index: 0;
         grid-column: 5 / -1;
         display: grid;
         grid-template-rows: 20% 30% 50%;
@@ -24,50 +42,46 @@
         h1 {
             font-size: 48px;
             text-align: center;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
         }
 
-        p {
-            margin: 2rem;
+        .white {
+            color: white;
         }
 
+        @include responsive($sm) {
+            grid-column: 1 / -1;
+            grid-template-rows: auto;
+
+            .white {
+                color: black;
+            }
+
+            h1, p {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+        }
     }
     
     #profil {
-        object-fit: cover;
         max-width: 405px;
-        max-height: 405px;
-        border-radius: 203px;
-        filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.5));
-
         grid-column: 1 / 5;
+        z-index: 0;
 
-        z-index: 1;
+        @include responsive($sm) {
+            grid-column: 1 / -1;
+            margin: auto;
+            max-width: 100%;
+        }
     }
 
+
     #frise-container {
-        position: relative;
         grid-column: 1 / -1;
+        transform: translate(0, -130px);
 
-        ul li {
-            position: absolute;
-            text-align: center;
-            list-style: none;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        ul li::before {
-            content: ' \25CF';
-            font-size: 50px;
-        }
-        
-        img {
-            width: 100%;
-            transform: translate(0, -80px);
-            
+        @include responsive($sm) {
+            transform: none;
         }
     }
 
@@ -75,40 +89,85 @@
         display: flex;
         flex-wrap: wrap;
         grid-column: 6 / -1;
-        margin: auto;
-    
+        align-items: center;
+        justify-content: center;
+        
         img {
             object-fit: cover;
             width: 150px;
             height: 200px;
             border-radius: 10px;
             box-shadow: 0 4px 4px 0 #00000044;
-
             margin: 5px 5px;
+        }
+
+        @include responsive($md) {
+            grid-column: 1 / -1;
         }
     }
 
     #paragraph-container {
         grid-column: 1 / 6;
+        margin: auto;
 
         p {
-            margin-left: 1rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
         }
+
+        @include responsive($md) {
+            grid-column: 1 / -1;
+        }
+
+        
     }
 }
 
-.white {
-    color: white;
+#links-container {
+
+    background-color: #333;
+    height: 300px;
+    overflow-y: hidden;
+    
+    #links {
+        
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        max-width: 1000px;
+
+        .link-card {
+            margin-top: 130px;
+            transition: margin .3s;
+
+            img {
+                object-fit: cover;
+                width: 230px;
+                height: 320px;
+
+                border-radius: 15px;
+                filter: drop-shadow(0 20px 5px rgba(0, 0, 0, 0.7));
+            }
+
+            &:hover {
+                margin-top: 80px;
+
+                img {
+                    filter: drop-shadow(0 40px 10px rgba(0, 0, 0, 0.5));
+                }
+
+                transition: margin .3s;
+            }
+        }
+    }    
 }
 
-.links img {
-    object-fit: cover;
-    width: 300px;
-    height: 230px;
-}
+
 
 #banner-container {
-    
+
     #background {
         position: absolute;
         width: 100%;
@@ -133,5 +192,5 @@
             width: 100%;
             max-width: 1000px;
         }
-    }    
+    }
 }

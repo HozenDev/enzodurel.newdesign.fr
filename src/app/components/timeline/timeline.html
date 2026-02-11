@@ -1,41 +1,16 @@
-<div class="timeline-wrapper">
+<div #timelineWrapper class="timeline-wrapper">
+    <svg class="timeline-svg">
+        <path #timelinePath [attr.d]="pathD()" class="timeline-path"></path>
 
-    <svg *ngIf="isReady" viewBox="-120 -80 1240 400" class="timeline-svg">
-
-        <!-- QUEUE GAUCHE -->
-        <g *ngIf="startPoint">
-            <line [attr.x1]="startPoint.x - 80" [attr.y1]="startPoint.y" [attr.x2]="startPoint.x"
-                [attr.y2]="startPoint.y" class="timeline-tail" />
-
-            <circle [attr.cx]="startPoint.x - 80" [attr.cy]="startPoint.y" r="8" class="timeline-tail-dot" />
-        </g>
-
-        <!-- FLÈCHE DROITE -->
-        <g *ngIf="endPoint">
-            <line [attr.x1]="endPoint.x" [attr.y1]="endPoint.y" [attr.x2]="endPoint.x + 65" [attr.y2]="endPoint.y"
-                class="timeline-tail" />
-
-            <polygon [attr.points]="
-                                    (endPoint.x + 80) + ',' + (endPoint.y) + ' ' +
-                                    (endPoint.x + 65) + ',' + (endPoint.y - 10) + ' ' +
-                                    (endPoint.x + 65) + ',' + (endPoint.y + 10)
-                                    " class="timeline-arrow" />
-        </g>
-        <!-- courbe -->
-        <path [attr.d]="generatePath()" class="timeline-path" />
-
-        <!-- points -->
-        <g *ngFor="let p of points">
-
-            <circle [attr.cx]="p.x" [attr.cy]="p.y" r="6" class="timeline-dot" />
-
-            <foreignObject [attr.x]="p.x - 70" [attr.y]="p.y + 30" width="140" height="80">
+        <g *ngFor="let p of renderedPoints">
+            <circle [attr.cx]="p.x!" [attr.cy]="p.y!" r="10" class="timeline-dot"></circle>
+            <foreignObject [attr.x]="p.x! - 50" [attr.y]="p.y! + 40" width="100px" height="200px">
                 <div class="timeline-card">
-                    <strong>{{ p.title }}</strong>
-                    <small>{{ p.date }}</small>
+                    <p *ngIf="p.date">{{p.date}}</p>
+                    <strong>{{p.title}}</strong>
+                    <!-- <p *ngIf="p.description">{{p.description}}</p> -->
                 </div>
             </foreignObject>
-
         </g>
     </svg>
 </div>
