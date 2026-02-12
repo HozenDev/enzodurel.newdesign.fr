@@ -6,7 +6,7 @@ $form-bg: #EEEEEE;
 $send-button-bg: $dark-blue;
 $send-button-bg-hover: #345D93;
 
-$link-color: #93c5fd;
+$link-color: white;
 
 $input-border-color: #C1C1C1;
 $input-bg-color: white;
@@ -24,9 +24,14 @@ $input-bg-color: white;
 .contact-container {
     max-width: 1260px;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 40px;
+
+    @include responsive($sm) {
+        flex-direction: column;
+    }
 }
 
 /* FORM */
@@ -34,12 +39,18 @@ $input-bg-color: white;
     background: $form-bg;
     padding: 40px;
     border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
 }
 
 .row {
     display: flex;
     gap: 16px;
     margin-bottom: 20px;
+
+    @include responsive($xxs) {
+        flex-direction: column;
+    }
 }
 
 .row:last-child {
@@ -136,12 +147,5 @@ button:hover {
         &:hover {
             text-decoration: underline;
         }
-    }
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .contact-container {
-        grid-template-columns: 1fr;
     }
 }
