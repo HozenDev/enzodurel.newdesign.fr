@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Project } from '../models/project.model';
+import { ProjectModel } from '../models/project.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectService {
     http = inject(HttpClient);
 
-    getProjects(): Observable<Array<Project>> {
+    getProjects(): Observable<Array<ProjectModel>> {
 	const url: string = 'assets/data/projects.json';
-	return this.http.get<Array<Project>>(url);
+	return this.http.get<Array<ProjectModel>>(url);
     }
 }

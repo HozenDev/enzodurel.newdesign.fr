@@ -3,8 +3,10 @@
 $timeline-color: #5D5D5D;
 $timeline-fill-dot: white;
 
+$timeline-height: 260px;
+
 .timeline-wrapper {
-    height: 260px;
+    height: $timeline-height;
 }
 
 .timeline-svg {

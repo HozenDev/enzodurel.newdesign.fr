@@ -1,15 +1,4 @@
-$xxs: 480px;
-$xs: 768px;
-$sm: 991px;
-$md: 1280px;
-$lg: 1920px;
-$xl: 5000px;
-
-@mixin responsive($query) {
-    @media ( max-width: + $query ) {
-        @content;
-    }
-}
+@use "../../styles/shared.scss" as *;
 
 #resume-container {
     background-color: #EEE;
@@ -22,7 +11,7 @@ $xl: 5000px;
     grid-gap: 15px;
     grid-template-rows: 405px 100px auto;
 
-    max-width: 1260px;
+    max-width: $content-width;
     margin: auto;
 
     @include responsive($md) {
@@ -135,30 +124,29 @@ $xl: 5000px;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
         max-width: 1000px;
 
         .link-card {
             margin-top: 130px;
             transition: margin .3s;
+            width: 230px;
+            height: 320px;
 
             img {
                 object-fit: cover;
-                width: 230px;
-                height: 320px;
-
+                width: 100%;
+                height: 100%;
                 border-radius: 15px;
                 filter: drop-shadow(0 20px 5px rgba(0, 0, 0, 0.7));
             }
 
             &:hover {
                 margin-top: 80px;
+                transition: margin .3s;
 
                 img {
                     filter: drop-shadow(0 40px 10px rgba(0, 0, 0, 0.5));
                 }
-
-                transition: margin .3s;
             }
         }
     }    

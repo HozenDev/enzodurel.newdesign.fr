@@ -1,3 +1,5 @@
+@use "../../styles/shared.scss" as *;
+
 .header-container {
     background-color: #EFEFEF;
     height: 50px;
@@ -8,7 +10,7 @@
         
         align-items: center;
         height: inherit;
-        max-width: 1260px;
+        max-width: $content-width;
         margin: auto;
 
         // Small reset

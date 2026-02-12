@@ -1,15 +1,34 @@
-export interface Image {
-    src: string;
-    alt: string;
+export interface ProjectTheme {
+    background: string;
+    text: string;
+    backgroundAlt: string;
 }
 
-export interface Project {
+export interface ProjectImage {
+    id: number;
+    src: string;
+    alt: string;
+    depth: number;
+
+    position?: {
+	x: number;
+	y: number;
+	scale?: number;
+	rotation?: number;
+    }
+}
+
+export interface ProjectModel {
     id: number;
     title: string;
-    authors: string;
-    description: string;
+    authors: string[];
     date: string;
-    tags: Array<string>;
-    link: string;
-    img: Image;
+    tags: string[];
+    links: {
+	label: string;
+	url: string;
+    }[];
+    description: string;
+    images: ProjectImage[];
+    theme?: ProjectTheme;
 }

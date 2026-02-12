@@ -1,4 +1,8 @@
-@for (project of projectItems(); track project.id) {
-<p> titre: {{ project.title }} </p>
-}
-
+<section class="project-section">
+  <div class="project-container">
+    <h1> Portfolio </h1>
+  @for (project of projectItems(); track project.id) {
+  <app-project [project]="project" />
+  }
+  </div>
+</section>

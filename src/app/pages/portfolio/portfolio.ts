@@ -1,17 +1,19 @@
 import { Component, signal, inject, OnInit } from '@angular/core';
-import { ProjectService } from '../../core/services/project'
-import { Project } from '../../core/models/project.model'
+import { ProjectService } from '../../core/services/project';
+import { ProjectModel } from '../../core/models/project.model';
+import { Project } from '../../components/project/project';
 import { catchError } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio',
-  imports: [],
+  imports: [CommonModule, Project],
   templateUrl: './portfolio.html',
   styleUrl: './portfolio.scss',
 })
 export class Portfolio implements OnInit {
     projectService = inject(ProjectService);
-    projectItems = signal<Array<Project>>([]);
+    projectItems = signal<Array<ProjectModel>>([]);
 
     ngOnInit(): void {
 	this.projectService
