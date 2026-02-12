@@ -1,0 +1,42 @@
+<article class="project-card"
+         [style.--project-bg]="project().theme?.background"
+         [style.--project-font-color]="project().theme?.text"
+         [style.--project-bg-alt]="project().theme?.backgroundAlt">
+
+    <!-- IMAGE STACK -->
+    <div class="media">
+        <app-image-depth-stack [images]="project().images">
+        </app-image-depth-stack>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <header class="header">
+            <h3 class="title">{{ project().title }}</h3>
+            <span class="date">{{ project().date }}</span>
+        </header>
+
+        <p class="description">
+            {{ project().description }}
+        </p>
+
+        <!-- TAGS -->
+        <div class="tags">
+            @for (tag of project().tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+            }
+        </div>
+
+        <!-- LINKS -->
+        <div class="links">
+            @for (link of project().links; track link.url) {
+            <a class="link" [href]="link.url" target="_blank">
+                {{ link.label }}
+            </a>
+            }
+        </div>
+
+    </div>
+
+</article>
