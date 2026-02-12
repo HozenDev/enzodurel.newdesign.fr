@@ -1,0 +1,5 @@
+<div class="image-stack" (mousemove)="onMouseMove($event)" (mouseleave)="reset()">
+    @for (vm of imageVMs(); track vm.data.id) {
+    <img [src]="vm.data.src" [style.transform]="vm.transform" [class.free]="vm.isFreePositioned" />
+    }
+</div>
