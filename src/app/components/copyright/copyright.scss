@@ -1,0 +1,23 @@
+@use "../../styles/shared.scss" as *;
+
+$copyright-bg-color: #333333;
+
+.copyright-section {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    background-color: $copyright-bg-color;
+    
+    .copyright-container {
+
+        max-width: $content-width;
+        height: 100%;
+        
+        p {
+            font-size: 12px;
+            color: $font-color-alt;
+        }
+    }
+}
