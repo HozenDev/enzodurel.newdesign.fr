@@ -1,7 +1,13 @@
 <section class="project-section">
   <div class="project-container">
     <h1> Portfolio </h1>
-  @for (project of projectItems(); track project.id) {
+    <div class="sort-controls">
+      <button (click)="setSort('date-desc')">Date ↓</button>
+      <button (click)="setSort('date-asc')">Date ↑</button>
+      <button (click)="setSort('title-asc')">Titre A → Z</button>
+      <button (click)="setSort('title-desc')">Titre Z → A</button>
+    </div>
+    @for (project of sortedProjects(); track project.id) {
   <app-project [project]="project" />
   }
   </div>

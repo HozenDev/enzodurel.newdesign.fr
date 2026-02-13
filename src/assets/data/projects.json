@@ -3,7 +3,7 @@
 	"id": 0,
 	"title": "2048 Sunset",
 	"authors": ["Durel Enzo", "Villepreux Thibault"],
-	"date": "2021",
+	"date": "2021-03-01",
 	"tags": ["Jeu", "C", "Graphique", "Son"],
 	"links": [
 	    {
@@ -25,8 +25,8 @@
 		"alt": "",
 		"depth": 5,
 		"position": {
-		    "x": 600,
-		    "y": 170
+		    "x": 760,
+		    "y": 190
 		}
 	    },
 	    {
@@ -35,8 +35,8 @@
 		"alt": "",
 		"depth": 15,
 		"position": {
-		    "x": -300,
-		    "y": 165
+		    "x": -150,
+		    "y": 200
 		}
 	    },
 	    {
@@ -46,7 +46,7 @@
 		"depth": 40,
 		"position": {
 		    "x": -20,
-		    "y": 300
+		    "y": 330
 		}
 	    },
 	    {
@@ -56,7 +56,7 @@
 		"depth": 60,
 		"position": {
 		    "x": 40,
-		    "y": 200
+		    "y": 230
 		}
 	    }
 	],
@@ -70,7 +70,7 @@
 	"id": 1,
 	"title": "Fourmi de Langton",
 	"authors": ["Durel Enzo", "Mallepeyre Nourrane", "Barra Vincent"],
-	"date": "2022",
+	"date": "2022-05-20",
 	"tags": ["Simulation", "Python", "Multiprocessing", "PyGame", "Engine"],
 	"links": [
 	    {
@@ -115,7 +115,7 @@
 	"id": 2,
 	"title": "Simulation de Robotique en essaim",
 	"authors": ["Durel Enzo", "Leroy Louis", "Villepreux Thibault"],
-	"date": "2023",
+	"date": "2023-06-25",
 	"tags": ["C", "Optimisation", "IA", "Simulation", "Engine"],
 	"links": [
 	    {
@@ -160,7 +160,7 @@
 	"id": 3,
 	"title": "API Emacs Org-Mode vers HTML et LaTeX",
 	"authors": ["Durel Enzo"],
-	"date": "2022",
+	"date": "2022-08-23",
 	"tags": ["API", "JavaScript", "Emacs", "Org", "CSS", "HTML", "Open-source"],
 	"links": [
 	    {
@@ -199,7 +199,7 @@
 	"id": 4,
 	"title": "Suivi par caméra embarqué en temps réel",
 	"authors": ["Durel Enzo", "Laurençot Mathieu"],
-	"date": "2024",
+	"date": "2024-03-01",
 	"tags": ["Embarqué", "mPython", "BLE", "Bluetooth", "Machine Learning", "Nicla"],
 	"links": [
 	    {
@@ -263,40 +263,134 @@
 	}
     },
     {
-	"id": 0,
+	"id": 5,
 	"title": "Relearncling",
 	"authors": ["Durel Enzo", "Laurençot Mathieu"],
-	"date": "2025",
+	"date": "2025-12-03",
 	"tags": ["Jeu", "Réalité Virtuelle", "Meta Quest 3", "Unity", "C#", "Recyclage", "Education"],
 	"links": [
 	    {
-		"label": "GitHub Link",
-		"url": "https://github.com/HozenDev/peaceful_2048"
+		"label": "GitLab Link",
+		"url": "https://gitlab.isima.fr/malaurenco/relearncling"
+	    },
+	    {
+		"label": "GitHub Mirror Link",
+		"url": "https://github.com/HozenDev/relearncling"
 	    }
 	],
 	"description": "Développement d'un jeu en réalité virtuelle dont l'objectif est de sensibiliser les joueurs au tri des déchets. Le joueur apprend dans un monde évolutif en fonction de ses décision. Si il réussi alors l'environement passe de délabré et pollué à sain et plein de vie. Il s'agit d'un jeu en réalité virtuelle développé sur Unity avec le Meta Quest 3.",
 	"images": [
 	    {
 		"id": 0,
-		"src": "assets/images/portfolio/2048/2048_bg.jpg",
+		"src": "assets/images/portfolio/relearncling/relearncling_bg.jpg",
 		"alt": "",
-		"depth": 0
+		"depth": 10
 	    },
 	    {
 		"id": 1,
-		"src": "assets/images/portfolio/2048/2048_soleil.png",
+		"src": "assets/images/portfolio/relearncling/relearncling_grass.png",
 		"alt": "",
-		"depth": 5,
+		"depth": 20
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/relearncling/relearncling_fire.png",
+		"alt": "",
+		"depth": 30
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/relearncling/relearncling_logo.png",
+		"alt": "",
+		"depth": 80,
 		"position": {
-		    "x": 600,
-		    "y": 170
+		    "x": -20,
+		    "y": -50,
+		    "scale": 0.7
 		}
 	    }
 	],
 	"theme": {
-	    "background": "#77392e",
-	    "text": "#ffe7c4",
-	    "backgroundAlt": "#9f5736"
+	    "background": "#9ccfd9",
+	    "text": "#333",
+	    "backgroundAlt": "#bec8c8"
+	}
+    },
+    {
+	"id": 6,
+	"title": "Starfield VR",
+	"authors": ["Durel Enzo", "Laurençot Mathieu", "Leu Anthony", "Allegre Matéo", "Souheir Yassmine"],
+	"date": "2023-10-14",
+	"tags": ["Jeu", "Réalité Virtuelle", "Meta Quest 2", "Unity", "C#", "Simulation"],
+	"links": [
+	    {
+		"label": "Youtube Trailer Video",
+		"url": "https://www.youtube.com/watch?v=SZ-uSQtYv-s"
+	    },
+	    {
+		"label": "GitLab Link",
+		"url": "https://gitlab.isima.fr/malaurenco/tp_rea_immersive"
+	    },
+	    {
+		"label": "GitHub Mirror Link",
+		"url": "https://github.com/HozenDev/tp_rea_immersive"
+	    }
+	],
+	"description": "Développement d'un jeu en réalité virtuelle où on incarne un voyageur dans l'espace cherchant des astéroïdes dorés pour en extraire des minéraux. Cependant il doit faire face à des bateaux pirates venu le piller. Il possède un radar de localisation, un marchant à bord et un vaisseau à la pointe de la technologie. Projet développé sur Unity, sous Meta Quest 2.",
+	"images": [
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/starfield/starfield_bg.jpg",
+		"alt": "",
+		"depth": 0
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/starfield/starfield_wall.png",
+		"alt": "",
+		"depth": 30
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/starfield/starfield_life.png",
+		"alt": "",
+		"depth": 50
+	    },
+	    {
+		"id": 4,
+		"src": "assets/images/portfolio/starfield/starfield_hand_right.png",
+		"alt": "",
+		"depth": 60
+	    },
+	    {
+		"id": 5,
+		"src": "assets/images/portfolio/starfield/starfield_hand_left.png",
+		"alt": "",
+		"depth": 55
+	    },
+	    {
+		"id": 6,
+		"src": "assets/images/portfolio/starfield/starfield_left.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 7,
+		"src": "assets/images/portfolio/starfield/starfield_right.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 8,
+		"src": "assets/images/portfolio/starfield/starfield_title.png",
+		"alt": "",
+		"depth": 80
+	    }
+	],
+	"theme": {
+	    "background": "#586472",
+	    "text": "#eed6de",
+	    "backgroundAlt": "#bd8f9c"
 	}
     }
 ]

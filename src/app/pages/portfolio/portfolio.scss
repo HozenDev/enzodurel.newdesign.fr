@@ -1,5 +1,9 @@
 $portfolio-bg: white;
 
+$button-bg: #EEE;
+$button-font-color: black;
+$button-bg-hover: #CCC;
+
 .project-section {
     display: flex;
     justify-content: center;
@@ -9,12 +13,42 @@ $portfolio-bg: white;
 
 .project-container {
     display: flex;
+    align-self: flex-start;
     flex-direction: column;
     align-items: center;
 
     h1 {
+        margin: 8rem;
         font-size: 48px;
-        font-family: cursive;
         font-weight: lighter;
+        text-shadow: #EEE 0 .5rem 0px;
+    }
+
+    .sort-controls {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+        justify-content: center;
+        // margin-bottom: 24px;
+        background: $button-bg;
+
+        button {
+            padding: 8px 14px;
+            // border-radius: 8px;
+            border: none;
+            background: $button-bg;
+            color: $button-font-color;
+            cursor: pointer;
+            transition: 0.2s;
+
+            &:hover {
+                background: $button-bg-hover;
+            }
+        }
+    }
+
+    app-project:nth-child(even) article {
+        flex-direction: row-reverse;
     }
 }
+

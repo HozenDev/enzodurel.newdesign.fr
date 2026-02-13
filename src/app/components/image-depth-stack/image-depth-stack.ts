@@ -44,8 +44,8 @@ export class ImageDepthStack {
           ${this.buildBaseTransform(vm.data)}
           translateX(${x * vm.data.depth}px)
           translateY(${y * vm.data.depth}px)
-      rotateX(${y * 0.2 * vm.data.depth}deg)
-      rotateY(${x * 0.4 * vm.data.depth}deg)
+      rotateX(${y * 0.3 * vm.data.depth}deg)
+      rotateY(${-x * 0.4 * vm.data.depth}deg)
         `
 	    }))
 	);

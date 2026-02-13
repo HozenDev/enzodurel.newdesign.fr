@@ -6,7 +6,7 @@ import { ImageDepthStack } from '../image-depth-stack/image-depth-stack';
   selector: 'app-project',
   imports: [ImageDepthStack],
   templateUrl: './project.html',
-  styleUrl: './project.scss',
+    styleUrl: './project.scss',
 })
 export class Project {
     project = input.required<ProjectModel>();
