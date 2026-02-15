@@ -1,0 +1,396 @@
+[
+    {
+	"id": 0,
+	"title": "2048 Sunset",
+	"authors": ["Durel Enzo", "Villepreux Thibault"],
+	"date": "2021-03-01",
+	"tags": ["Jeu", "C", "Graphique", "Son"],
+	"links": [
+	    {
+		"label": "GitHub Link",
+		"url": "https://github.com/HozenDev/peaceful_2048"
+	    }
+	],
+	"description": "Développement du jeu '2048'. Développé en langage C sous la librairie graphique SDL1.2. La grille de jeu a été conçue avec le concept de tuiles (TileMapping) qui était très développé dans les années 80 pour les jeux 2D. J'ai donc aussi créer toute la charte graphique et conçue puis réalisé la musique.",
+	"images": [
+	    {
+		"id": 0,
+		"src": "assets/images/portfolio/2048/2048_bg.jpg",
+		"alt": "",
+		"depth": 0
+	    },
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/2048/2048_soleil.png",
+		"alt": "",
+		"depth": 5,
+		"position": {
+		    "x": 760,
+		    "y": 190
+		}
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/2048/2048_desert.png",
+		"alt": "",
+		"depth": 15,
+		"position": {
+		    "x": -150,
+		    "y": 200
+		}
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/2048/2048_sable.png",
+		"alt": "",
+		"depth": 40,
+		"position": {
+		    "x": -20,
+		    "y": 330
+		}
+	    },
+	    {
+		"id": 4,
+		"src": "assets/images/portfolio/2048/2048_homme.png",
+		"alt": "",
+		"depth": 60,
+		"position": {
+		    "x": 40,
+		    "y": 230
+		}
+	    }
+	],
+	"theme": {
+	    "background": "#77392e",
+	    "text": "#ffe7c4",
+	    "backgroundAlt": "#9f5736"
+	}
+    },
+    {
+	"id": 1,
+	"title": "Fourmi de Langton",
+	"authors": ["Durel Enzo", "Mallepeyre Nourrane", "Barra Vincent"],
+	"date": "2022-05-20",
+	"tags": ["Simulation", "Python", "Multiprocessing", "PyGame", "Engine"],
+	"links": [
+	    {
+		"label": "GitHub Link",
+		"url": "https://github.com/HozenDev/fourmi_de_langton"
+	    }
+	],
+	"description": "Création d'un logiciel de simulation de la fourmi de Langton qui est une machine de Turing universelle bidimensionnelle constituée d'un ensemble de règles simples mais dont le comportement émergent est complexe. Logiciel développé sous Python 3 et avec la librarie graphique PyGame basée sur la SDL2. Plusieurs concepts ont été introduits dans ce travail notamment avec une approche du multiprocessing et un développement en paradigme objet qui se rapproche de la conception des vies émergentes d'après l'article écrit par le professeur Langton: \"Studying artificial life with cellular automata\".",
+	"images": [
+	    {
+		"id": 0,
+		"src": "assets/images/portfolio/fourmi/fourmi_bg.png",
+		"alt": "",
+		"depth": 0
+	    },
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/fourmi/fourmi_line1.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/fourmi/fourmi_line2.png",
+		"alt": "",
+		"depth": 30
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/fourmi/fourmi_points.png",
+		"alt": "",
+		"depth": 40
+	    }
+	],
+	"theme": {
+	    "background": "#efefef",
+	    "text": "#333333",
+	    "backgroundAlt": "white"
+	}
+    },
+    {
+	"id": 2,
+	"title": "Simulation de Robotique en essaim",
+	"authors": ["Durel Enzo", "Leroy Louis", "Villepreux Thibault"],
+	"date": "2023-06-25",
+	"tags": ["C", "Optimisation", "IA", "Simulation", "Engine"],
+	"links": [
+	    {
+		"label": "GitHub Link",
+		"url": "https://github.com/HozenDev/zz1_apprentissage"
+	    }
+	],
+	"description": "Création d'un logiciel de simulation de robotique en essaim. Le but de ce projet est de simuler le comportement d'un essaim de robots qui doivent se déplacer dans un environnement en cherchant une cible. Les robots sont autonomes et doivent communiquer entre eux pour trouver la cible. Le projet est développé en C avec la librairie graphique SDL2. L'apprentissage des robots est réalisé par un apprentissage par renforcement. Plusieurs algorithmes d'optimisation sont utilisés pour l'apprentissage des robots comme l'algorithme génétique, l'algorithme de colonie de fourmis ou encore l'algorithmes recuit simulé. Le projet est réalisé dans le cadre d'un projet de fin de la première année de mon école d'ingénieur.",
+	"images": [
+	    {
+		"id": 0,
+		"src": "assets/images/portfolio/rob_essaim/far.png",
+		"alt": "",
+		"depth": 0
+	    },
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/rob_essaim/sand.png",
+		"alt": "",
+		"depth": 5
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/rob_essaim/foreground-merged.png",
+		"alt": "",
+		"depth": 15
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/rob_essaim/fish_scene.png",
+		"alt": "",
+		"depth": 100
+	    }
+	],
+	"theme": {
+	    "background": "#122c64",
+	    "text": "#77c8d3",
+	    "backgroundAlt": "#185b99"
+	}
+    },
+    {
+	"id": 3,
+	"title": "API Emacs Org-Mode vers HTML et LaTeX",
+	"authors": ["Durel Enzo"],
+	"date": "2022-08-23",
+	"tags": ["API", "JavaScript", "Emacs", "Org", "CSS", "HTML", "Open-source"],
+	"links": [
+	    {
+		"label": "GitHub Link",
+		"url": "https://github.com/HozenDev/hozen-style"
+	    }
+	],
+	"description": "Conception d'une bibliothèque de style pour l'exportation d'un document org-mode en HTML et LaTeX. Le but de ce projet est de créer une bibliothèque de style hébergé donc accessible à quiconque avec de la connexion internet qui permet d'exporter un document org-mode en HTML ou LaTeX avec un style personnalisé. Le projet est développé en CSS, en HTML, en JavaScript et en LaTeX.",
+	"images": [
+	    {
+		"id": 0,
+		"src": "assets/images/portfolio/orgapi/org_bg.jpg",
+		"alt": "",
+		"depth": 10
+	    },
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/orgapi/org_fg.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/orgapi/org_image.png",
+		"alt": "",
+		"depth": 40
+	    }
+	],
+	"theme": {
+	    "background": "#e4dccf",
+	    "text": "#314041",
+	    "backgroundAlt": "#f0ebe3"
+	}
+    },
+    {
+	"id": 4,
+	"title": "Suivi par caméra embarqué en temps réel",
+	"authors": ["Durel Enzo", "Laurençot Mathieu"],
+	"date": "2024-03-01",
+	"tags": ["Embarqué", "mPython", "BLE", "Bluetooth", "Machine Learning", "Nicla"],
+	"links": [
+	    {
+		"label": "GitHub Link",
+		"url": "https://github.com/mordroreur/ProjetCamera"
+	    }
+	],
+	"description": "Développement d'une solution logicielle de suivi d'un cadis de golf et de son propriétaire. Déploiment d'un modèle d'intelligence artificielle de reconnaissance d'un humain sur un terrain de golf et de sa localisation dans l'image. Le modèle a été développée sur Nicla Vision et consomme 500 kB de mémoire vive. Développement d'une logique de suivi en fonction de la détection du modèle. Développement de l'interface de communication bluetooth entre la puce et le cadis de golf pour le déplacement de ce dernier (actionnage de ses roues).",
+	"images": [
+	    {
+		"id": 0,
+		"src": "assets/images/portfolio/tracking/tracking_bg.jpg",
+		"alt": "",
+		"depth": 0
+	    },
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/tracking/tracking_step1.png",
+		"alt": "",
+		"depth": 10
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/tracking/tracking_step2.png",
+		"alt": "",
+		"depth": 15
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/tracking/tracking_step3.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 4,
+		"src": "assets/images/portfolio/tracking/tracking_step4.png",
+		"alt": "",
+		"depth": 25
+	    },
+	    {
+		"id": 5,
+		"src": "assets/images/portfolio/tracking/tracking_step5.png",
+		"alt": "",
+		"depth": 30
+	    },
+	    {
+		"id": 6,
+		"src": "assets/images/portfolio/tracking/tracking_nicla.png",
+		"alt": "",
+		"depth": 40,
+		"position": {
+		    "x": 150,
+		    "y": 250
+		}
+	    }
+	],
+	"theme": {
+	    "background": "#7f9872",
+	    "text": "white",
+	    "backgroundAlt": "#97bd84"
+	}
+    },
+    {
+	"id": 5,
+	"title": "Relearncling",
+	"authors": ["Durel Enzo", "Laurençot Mathieu"],
+	"date": "2025-12-03",
+	"tags": ["Jeu", "Réalité Virtuelle", "Meta Quest 3", "Unity", "C#", "Recyclage", "Education"],
+	"links": [
+	    {
+		"label": "GitLab Link",
+		"url": "https://gitlab.isima.fr/malaurenco/relearncling"
+	    },
+	    {
+		"label": "GitHub Mirror Link",
+		"url": "https://github.com/HozenDev/relearncling"
+	    }
+	],
+	"description": "Développement d'un jeu en réalité virtuelle dont l'objectif est de sensibiliser les joueurs au tri des déchets. Le joueur apprend dans un monde évolutif en fonction de ses décision. Si il réussi alors l'environement passe de délabré et pollué à sain et plein de vie. Il s'agit d'un jeu en réalité virtuelle développé sur Unity avec le Meta Quest 3.",
+	"images": [
+	    {
+		"id": 0,
+		"src": "assets/images/portfolio/relearncling/relearncling_bg.jpg",
+		"alt": "",
+		"depth": 10
+	    },
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/relearncling/relearncling_grass.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/relearncling/relearncling_fire.png",
+		"alt": "",
+		"depth": 30
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/relearncling/relearncling_logo.png",
+		"alt": "",
+		"depth": 80,
+		"position": {
+		    "x": -20,
+		    "y": -50,
+		    "scale": 0.7
+		}
+	    }
+	],
+	"theme": {
+	    "background": "#9ccfd9",
+	    "text": "#333",
+	    "backgroundAlt": "#bec8c8"
+	}
+    },
+    {
+	"id": 6,
+	"title": "Starfield VR",
+	"authors": ["Durel Enzo", "Laurençot Mathieu", "Leu Anthony", "Allegre Matéo", "Souheir Yassmine"],
+	"date": "2023-10-14",
+	"tags": ["Jeu", "Réalité Virtuelle", "Meta Quest 2", "Unity", "C#", "Simulation"],
+	"links": [
+	    {
+		"label": "Youtube Trailer Video",
+		"url": "https://www.youtube.com/watch?v=SZ-uSQtYv-s"
+	    },
+	    {
+		"label": "GitLab Link",
+		"url": "https://gitlab.isima.fr/malaurenco/tp_rea_immersive"
+	    },
+	    {
+		"label": "GitHub Mirror Link",
+		"url": "https://github.com/HozenDev/tp_rea_immersive"
+	    }
+	],
+	"description": "Développement d'un jeu en réalité virtuelle où on incarne un voyageur dans l'espace cherchant des astéroïdes dorés pour en extraire des minéraux. Cependant il doit faire face à des bateaux pirates venu le piller. Il possède un radar de localisation, un marchant à bord et un vaisseau à la pointe de la technologie. Projet développé sur Unity, sous Meta Quest 2.",
+	"images": [
+	    {
+		"id": 1,
+		"src": "assets/images/portfolio/starfield/starfield_bg.jpg",
+		"alt": "",
+		"depth": 0
+	    },
+	    {
+		"id": 2,
+		"src": "assets/images/portfolio/starfield/starfield_wall.png",
+		"alt": "",
+		"depth": 30
+	    },
+	    {
+		"id": 3,
+		"src": "assets/images/portfolio/starfield/starfield_life.png",
+		"alt": "",
+		"depth": 50
+	    },
+	    {
+		"id": 4,
+		"src": "assets/images/portfolio/starfield/starfield_hand_right.png",
+		"alt": "",
+		"depth": 60
+	    },
+	    {
+		"id": 5,
+		"src": "assets/images/portfolio/starfield/starfield_hand_left.png",
+		"alt": "",
+		"depth": 55
+	    },
+	    {
+		"id": 6,
+		"src": "assets/images/portfolio/starfield/starfield_left.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 7,
+		"src": "assets/images/portfolio/starfield/starfield_right.png",
+		"alt": "",
+		"depth": 20
+	    },
+	    {
+		"id": 8,
+		"src": "assets/images/portfolio/starfield/starfield_title.png",
+		"alt": "",
+		"depth": 80
+	    }
+	],
+	"theme": {
+	    "background": "#586472",
+	    "text": "#eed6de",
+	    "backgroundAlt": "#bd8f9c"
+	}
+    }
+]
