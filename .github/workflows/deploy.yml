@@ -28,6 +28,6 @@ jobs:
 
       - name: Deploy to Github pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_WEBSITE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           npm run ng -- deploy --repo="https://github.com/HozenDev/enzodurel.newdesign.fr.git" --base-href="https://hozendev.github.io/enzodurel.newdesign.fr/" --name=HozenDev --email=enzo.durel@gmail.com
