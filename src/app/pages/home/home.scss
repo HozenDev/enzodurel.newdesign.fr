@@ -53,9 +53,9 @@
     }
     
     #profil {
+        z-index: 0;
         max-width: 405px;
         grid-column: 1 / 5;
-        z-index: 0;
 
         @include responsive($sm) {
             grid-column: 1 / -1;
@@ -171,8 +171,11 @@
     }
 
     #logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
         position: relative;
-        text-align: center;
         height: 100%;
         height: 500px;
 
