@@ -51,16 +51,39 @@
             }
         }
     }
-    
-    #profil {
-        z-index: 0;
+
+    .profil-container {
+        z-index: 1;
         max-width: 405px;
+        max-height: 405px;
+        margin: 20px;
         grid-column: 1 / 5;
+        overflow: hidden;
+        border-radius: 203px;
+        aspect-ratio: 1/1;
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .5));
+        
+        img {
+            object-fit: cover;
+            width: 100%;
+            scale: 1.5;
+            transition: transform .3s, scale .3s;
+
+            &:hover {
+                scale: 2;
+                transform: translateX(10%);
+                transition: transform .3s, scale .3s;
+                
+            }
+        }
 
         @include responsive($sm) {
             grid-column: 1 / -1;
             margin: auto;
-            max-width: 100%;
+
+            img {
+                transform: none;
+            }
         }
     }
 
@@ -180,6 +203,7 @@
         height: 500px;
 
         #hozen-logo {
+            margin: 20px;
             width: 100%;
             max-width: 1000px;
         }
