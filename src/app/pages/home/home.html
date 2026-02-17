@@ -6,10 +6,10 @@
     </div>
 </section>
 <section id="resume-container">
-  <div id="resume">
-    <div class="profil-container">
-        <img id="profil" src="assets/images/photo_profil.jpg" alt="" />
-    </div>
+    <div id="resume">
+        <div class="profil-container">
+            <img id="profil" src="assets/images/photo_profil.jpg" alt="" />
+        </div>
         <div id="presentation">
             <h1 class="white">Enzo "Hozen" Durel</h1>
             <p class="white">
@@ -49,17 +49,25 @@
         </div>
     </div>
 </section>
+
 <section id="links-container">
-  <div id="links">
-<a class="link-card" routerLink="/portfolio">
-    <img id="portfolio" class="elevate" src="assets/images/link_portfolio_logo.png" alt="" />
-  </a>
-  <a class="link-card" routerLink="/cv">
-        <img id="cv" class="elevate" src="assets/images/link_cv_logo.jpg" alt="" />
-  </a>
-<a class="link-card" routerLink="">
-    <img id="freelance" class="elevate" src="assets/images/link_freelance_logo.jpg" alt="" />
-  </a>
-  </div>
+  <div class="round-border">
+    <svg viewBox="0 30 1440 320" preserveAspectRatio="none" height="300px" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#eee"
+            d="M0,160L80,176C160,192,320,224,480,213.3C640,203,800,149,960,128C1120,107,1280,117,1360,122.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+        </path>
+    </svg>
+        </div>
+        <div id="links">
+        <a class="link-card" routerLink="/portfolio">
+            <img id="portfolio" class="elevate" src="assets/logos/portfolio_logo.png" alt="" />
+        </a>
+        <a class="link-card" routerLink="/cv">
+            <img id="cv" class="elevate" src="assets/logos/cv_logo.png" alt="" />
+        </a>
+        <a class="link-card" routerLink="">
+            <img id="freelance" class="elevate" src="assets/logos/freelance_logo.png" alt="" />
+        </a>
+    </div>
 </section>
 <app-contact></app-contact>

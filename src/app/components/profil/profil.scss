@@ -1,0 +1,63 @@
+$photo-max-dim: 300px;
+$photo-border-radius: 150px;
+$profil-max-w: 1200px;
+$profil-margin: 50px;
+$photo-border-color: #EEE;
+
+.profil-container {
+    display: flex;
+    align-items: center;
+    max-width: $profil-max-w;
+    margin: $profil-margin;
+    gap: $profil-margin;
+
+    .photo-container {
+        max-width: $photo-max-dim;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+        border-radius: $photo-border-radius;
+        // border-left: solid .2rem $photo-border-color;
+        // border-bottom: solid .2rem $photo-border-color;
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .5));
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            scale: 1.5;
+            transition: transform .3s, scale .3s;
+
+            &:hover {
+                scale: 2;
+                transform: translateX(10%);
+                transition: transform .3s, scale .3s;
+                
+            }
+        }
+    }
+
+    .presentation {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            // add cursive font
+        }
+
+        p {
+            line-height: normal;
+            text-indent: 3em;
+            padding: 2rem;
+            background-color: #f4f4f4;
+            border-radius: 2rem 2rem 2rem 0;
+
+            transform: none;
+            transition: transform .2s, filter .2s;
+            filter: drop-shadow(0 5px 3px rgba(0, 0, 0, .25));
+
+            &:hover {
+                transform: translateY(-10px);
+                filter: drop-shadow(0 10px 5px rgba(0, 0, 0, .25));
+            }
+        }
+    }
+}

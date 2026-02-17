@@ -1,0 +1,10 @@
+$cv-bg: #263a55;
+
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-top: 3rem;
+    background-color: $cv-bg;
+}

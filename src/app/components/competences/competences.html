@@ -1,0 +1,38 @@
+<section class="competences-container white">
+    <section class="technicals-container">
+        <h2>Compétences</h2>
+        <div class="technicals">
+            @for (technical of technicalItems(); track $index) {
+            <div class="technical">
+                <img class="icon invert" src="assets/logos/icons/{{technical.icon}}" [alt]="" />
+                <p> {{technical.name}} </p>
+            </div>
+            }
+        </div>
+    </section>
+    <section class="languages-container">
+        <h2>Langues</h2>
+        <div class="languages">
+            @for (language of languageItems(); track $index) {
+            <div class="language">
+                <img class="icon" src="assets/logos/icons/{{language.icon}}" [alt]="" />
+                <p> {{language.name}}: {{language.lvl}} </p>
+                @if (language.certifications) {
+                <ul class="certif-container">
+                    @for (certif of language.certifications; track $index ) {
+                    <li class="certif">
+                        <img class="icon" src="assets/logos/icons/medal.png" [alt]="" />
+                        <p> {{certif.name}} {{certif.score}} </p>
+                    </li>
+                    }
+                </ul>
+                }
+            </div>
+            }
+        </div>
+    </section>
+    <section class="about">
+        <h2>A propos</h2>
+        <p> {{aboutItem()}} </p>
+    </section>
+</section>
