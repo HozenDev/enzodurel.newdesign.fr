@@ -1,0 +1,53 @@
+[
+    {
+	"date": "2019-2020",
+	"title": "Baccalauréat Scientifique",
+	"description": "Baccalauréat Scientifique spécialisé en Sciences de l'ingénieur et mathématiques obtenue avec mention BIEN.",
+	"lieu": "Lycée générale et technologique de Beauregard, Montbrison, France",
+	"percent": 10
+    },
+    {
+	"date": "2020-2022",
+	"title": "Licence Informatique",
+	"description": "Licence en Informatique et Mathématiques en parallèle de la class préparatoire intégrée à l'école d'ingénieur ISIMA.",
+	"cours": [
+	    "Spécialisé en Mathématiques"
+	],
+	"lieu": "Université Clermont-Auvergne, Clermont-Ferrand, France",
+	"percent": 30
+    },
+    {
+	"date": "2020-2022",
+	"title": "Classe préparatoire ISIMA",
+	"description": "Classe préparatoire à l'école d'ingénieur spécialisée en Informatique ISIMA.",
+	"cours": ["Optimisation Linéaire", "Imagerie", "Linux", "Conférences", "Réalité Virtuelle", "Modélisation", "Projets"],
+	"lieu": "ISIMA, Clermont-Ferrand, France",
+	"percent": 50
+    },
+    {
+	"date": "2022-2025",
+	"title": "Ingénieur Informatique ISIMA",
+	"description": "Informatique des systèmes interactifs pour l'embarqué, la robotique et le virtuel",
+	"cours": [
+	    "Informatique", "Mathématiques Appliquées", "Management"
+	],
+	"lieu": "ISIMA, Clermont-Ferrand, France",
+	"percent": 70
+    },
+    {
+	"date": "2024-2025",
+	"title": "Master of Computer Sciences",
+	"description": "Master of Sciences in Computer Sciences",
+	"cours": [
+	    "Advanced Machine Learning", "Database", "Software Engineering Process", "Virtual Reality", "Master Thesis", "Parallel Programming", "Computer Architecture", "Algorithm Analysis"
+	],
+	"lieu": "The University of Oklahoma, Norman, United States",
+	"links": [
+	    {
+		"src": "assets/docs/ou_diploma.pdf",
+		"alt": "Diplôme Officiel"
+	    }
+	],
+	"percent": 90
+    }
+]
