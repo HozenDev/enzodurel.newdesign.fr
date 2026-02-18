@@ -4,9 +4,14 @@ export interface TimelineEvent {
     
     date?: string;
     description?: string;
-    icon?: number; // influence the height
-
-    // Computed fields
-    x?: number;
+    cours?: string[];
+    lieu?: string;
+    links?: {
+	alt: string,
+	src: string
+    }[];
+    
+    // computed fields
+    x?: number; 
     y?: number;
 }

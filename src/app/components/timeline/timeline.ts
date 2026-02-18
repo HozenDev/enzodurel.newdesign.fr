@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, effect, OnInit, ElementRef, AfterViewInit, HostListener, inject, signal } from '@angular/core';
+import { Component, input, ViewChild, effect, OnInit, ElementRef, AfterViewInit, HostListener, inject, signal } from '@angular/core';
 import { TimelineEvent } from '../../core/models/timeline.model';
 import { TimelineService } from '../../core/services/timeline';
 import { CommonModule } from '@angular/common';
@@ -24,6 +24,15 @@ export class Timeline implements OnInit {
     pathD = signal('');
     timelineService = inject(TimelineService);
 
+    // input elements
+    urlEvent = input<string>('');
+    show_description = input<boolean>(false);
+    show_date = input<boolean>(true);
+    show_title = input<boolean>(true);
+    card_offset_x = input<number>(-50);
+    card_offset_y = input<number>(40);
+    svg_height = input<string>("300px");
+
     ngOnInit() {
 	this.parentWidth.set(this.wrapper.nativeElement.clientWidth);
 	const w = this.parentWidth();
@@ -33,7 +42,7 @@ export class Timeline implements OnInit {
 	this.pathD.set(path);
 
 	// charger les points depuis JSON
-	this.timelineService.getTimelineEvents().subscribe((data) => {
+	this.timelineService.getTimelineEvents(this.urlEvent()).subscribe((data) => {
 	    this.points.set(data);
 	    this.updatePointsOnPath();
 	});

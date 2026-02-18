@@ -1,1 +1,43 @@
-<p>exppro works!</p>
+<section class="exppro-container">
+  <section class="exppro-part">
+  <h2 class="cv-title">Expériences Professionnelles</h2>
+  <section class="exppros-section">
+    @for (item of expproItems(); track item.id) {
+    <section class="exppro-item">
+      <h3>{{item.name}} - {{item.company}}</h3>
+      <div class="subtitle">
+        <h4 class="poste">{{item.poste}}</h4>
+        <section class="tags">
+        @for (tag of item.tags; track $index) {
+        <p>{{tag}}</p>
+        }
+        </section>
+        <section class="date">
+        @if (item.end_date) {
+        <p>{{item.begin_date}} - {{item.end_date}}</p>
+        }
+        @else {
+        <p>{{item.begin_date}} - (en cours)</p>
+        }
+        </section>
+      </div>
+      @if (item.missions) {
+      <ul class="missions">
+        @for (mission of item.missions; track $index) {
+        <li>{{mission}}</li>
+        }
+      </ul>
+      }
+    </section>
+    }
+  </section>
+  </section>
+  <section class="project-part">
+    <h2 class="cv-title">Projets</h2>
+    <section class="link-card">
+    <a routerLink="/portfolio">
+      <img src="assets/logos/portfolio_logo.png" alt="" />
+    </a>
+    </section>
+  </section>
+</section>

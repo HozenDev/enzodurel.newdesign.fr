@@ -2,15 +2,23 @@
     <svg class="timeline-svg">
         <path #timelinePath [attr.d]="pathD()" class="timeline-path"></path>
 
-        <g *ngFor="let p of renderedPoints">
-            <circle [attr.cx]="p.x!" [attr.cy]="p.y!" r="10" class="timeline-dot"></circle>
-            <foreignObject [attr.x]="p.x! - 50" [attr.y]="p.y! + 40" width="100px" height="200px">
-                <div class="timeline-card">
-                    <p *ngIf="p.date">{{p.date}}</p>
-                    <strong>{{p.title}}</strong>
-                    <!-- <p *ngIf="p.description">{{p.description}}</p> -->
-                </div>
-            </foreignObject>
+        @for (p of renderedPoints; track $index) {
+        <g>
+          <circle [attr.cx]="p.x!" [attr.cy]="p.y!" r="10"
+                  class="timeline-dot"
+                  (click)="timelineService.setHoveredEvent(p)">
+          </circle>
+          <foreignObject [attr.x]="p.x! + card_offset_x()"
+                         [attr.y]="p.y! + card_offset_y()"
+                         width="100px"
+                         height="50%">
+            <div class="timeline-card">
+              @if (show_date() && p.date) {<p>{{p.date}}</p>}
+              @if (show_title()) {<strong>{{p.title}}</strong>}
+              @if (show_description() && p.description) {<p>{{p.description}}</p>}
+            </div>
+          </foreignObject>
         </g>
+        }
     </svg>
 </div>

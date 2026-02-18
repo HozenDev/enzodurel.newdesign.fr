@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { CompetencesService } from '../../core/services/competences';
 import { catchError } from 'rxjs';
 import { LanguageModel, TechnicalModel, SkillModel } from '../../core/models/competences.model';
@@ -9,7 +9,7 @@ import { LanguageModel, TechnicalModel, SkillModel } from '../../core/models/com
   templateUrl: './competences.html',
   styleUrl: './competences.scss',
 })
-export class Competences {
+export class Competences implements OnInit {
     competencesService = inject(CompetencesService);
 
     technicalItems = signal<TechnicalModel[]>([]);

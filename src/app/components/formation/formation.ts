@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Timeline } from '../../components/timeline/timeline';
+import { TimelineService } from '../../core/services/timeline';
 
 @Component({
   selector: 'app-formation',
-  imports: [],
+  imports: [Timeline],
   templateUrl: './formation.html',
   styleUrl: './formation.scss',
 })
 export class Formation {
-
+    timelineService = inject(TimelineService);
 }

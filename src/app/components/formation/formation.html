@@ -1,1 +1,34 @@
-<p>formation works!</p>
+<section class="formation-container">
+  <h2 class="cv-title">Formation</h2>
+  <app-timeline
+      urlEvent="assets/data/timeline_cv.json"
+      class="frise-container"> </app-timeline>
+  @if (timelineService.activeEvent(); as event) {
+  <section class="formation-info">
+    <div class="main-info">
+    <h3 class="info-title">{{event.title}}</h3>
+    @if (event.date) {<p class="date">{{event.date}}</p>}
+    @if (event.lieu) {<p class="lieu">{{event.lieu}}</p>}
+    @if (event.links) {
+    @for (link of event.links; track $index) {
+    <a class="link" [href]="link.src">
+        {{ link.alt }}
+    </a>
+    }
+    }
+    </div>
+    <div class="sub-info">
+      @if (event.description) {<p class="description">{{event.description}}</p>}
+      @if (event.cours) {
+      <ul class="cours-info">
+        @for (cours of event.cours; track $index) {
+        <li> {{cours}} </li>
+        }
+        </ul>
+        }
+        
+        </div>
+  </section>
+  }
+</section>
+

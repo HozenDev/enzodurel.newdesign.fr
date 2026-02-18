@@ -1,0 +1,67 @@
+@use "../../styles/shared.scss" as *;
+
+$container-max-width: 1200px;
+$bg-color: #eee;
+
+.formation-container {
+    background-color: $bg-color;
+    max-width: $container-max-width;
+    margin: 2rem auto;
+    margin-bottom: 0;
+    padding: 2rem;
+    transition: padding .3s;
+
+    &:hover {
+        padding: 2rem 4rem;
+    }
+
+    border-radius: 2rem 0;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 250px 1fr;
+
+    .frise-container {
+        z-index: 0;
+        transform: translateY(-20px);
+    }
+
+    .formation-info {
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        .main-info {
+            flex: 1 1 auto;
+            padding: 1rem;
+
+            .info-title {
+                margin-top: 0;
+            }
+
+            .lieu {
+                color: #777;
+            }
+
+            .link {
+                color: $dark-blue;
+            }
+        }
+
+        .sub-info {
+            flex: 1 1 auto;
+            padding: 2rem;
+            background-color: #869bd055;
+            border-radius: 1rem 0;
+
+            p {
+                margin: 0;
+            }
+
+            .cours-info {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}

@@ -5,10 +5,11 @@ $profil-margin: 50px;
 $photo-border-color: #EEE;
 
 .profil-container {
+    margin: auto;
+    padding: 2rem;
     display: flex;
     align-items: center;
     max-width: $profil-max-w;
-    margin: $profil-margin;
     gap: $profil-margin;
 
     .photo-container {
@@ -23,13 +24,12 @@ $photo-border-color: #EEE;
         img {
             object-fit: cover;
             width: 100%;
-            scale: 1.5;
-            transition: transform .3s, scale .3s;
+            transform: translateY(-30%);
+            transition: scale .3s;
 
             &:hover {
-                scale: 2;
-                transform: translateX(10%);
-                transition: transform .3s, scale .3s;
+                scale: 1.1;
+                transition: scale .3s;
                 
             }
         }
@@ -39,13 +39,13 @@ $photo-border-color: #EEE;
         display: flex;
         flex-direction: column;
 
-        h1 {
-            // add cursive font
+        h1, h2 {
+            margin: .5rem 0;
         }
 
         p {
-            line-height: normal;
-            text-indent: 3em;
+            // line-height: normal;
+            // text-indent: 3em;
             padding: 2rem;
             background-color: #f4f4f4;
             border-radius: 2rem 2rem 2rem 0;
