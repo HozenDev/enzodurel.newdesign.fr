@@ -28,31 +28,18 @@ $project-font-color: var(--project-font-color);
 
     @include responsive($md) {
         flex-direction: column;
-        height: 500px;
-
-        .media {
-            display: none;
-        }
-        
-        &:hover {
-            .media {
-                display: initial;
-            }
-        }
+        height: auto;
     }
 
     transition: height .5s;
-
-    
 }
 
 .project-card:hover {
-    // transform: translateY(-4px);
     height: 500px;
     transition: height .5s;
 
     @include responsive($md) {
-        height: 800px;
+        height: auto;
     }
 }
 
@@ -65,26 +52,41 @@ $project-font-color: var(--project-font-color);
 }
 
 .media {
-    flex: 1;
+    flex: 1 1 auto;
     position: relative;
     transition: flex .5s;
     // border-radius: 14px;
     overflow: hidden;
+    max-width: 100%;
 
     &:hover {
-        flex: 1.5;
+        flex: 1.5 0 0;
         transition: flex .5s;
+
+        @include responsive($md) {
+            flex: 3 1 auto;
+            height: 300px;
+        }
+    }
+
+    @include responsive($md) {
+        flex: 3 1 auto;
+        height: 300px;
     }
 }
 
 /* CONTENT */
 .content {
-    flex: 1;
+    flex: 1 0 0;
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.35);
     margin-top: .5rem;
+
+    @include responsive($md) {
+        flex: 0 0 auto;
+    }
 }
 
 /* HEADER */

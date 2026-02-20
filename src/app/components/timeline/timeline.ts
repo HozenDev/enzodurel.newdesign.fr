@@ -74,7 +74,7 @@ export class Timeline implements OnInit {
 		h = this.parentHeight() - (p.y + this.card_offset_y());
 	    }
 	}
-	return h;
+	return (h > 0) ? h : 0;
     }
 
     cardWidth(p: TimelineEvent): number {
@@ -87,7 +87,7 @@ export class Timeline implements OnInit {
 	else {
 	    w = this.parentWidth() / this.renderedPoints.length;
 	}
-	return w;
+	return (w > 0) ? w : 0;
     }
 
     /*

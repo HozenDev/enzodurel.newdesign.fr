@@ -28,11 +28,12 @@ $timeline-min-height: 300px;
     margin: auto;
 
     @include responsive($sm) {
-        grid-template-rows: 405px auto $timeline-min-height auto auto;
+        grid-column: 1 / -1;
+        grid-template-rows: auto auto $timeline-min-height auto auto;
     }
 
     @include responsive(600px) {
-        grid-template-rows: 405px auto $timeline-vertical-height auto auto;
+        grid-template-rows: auto auto $timeline-vertical-height auto auto;
     }
 
     .presentation {
@@ -42,7 +43,7 @@ $timeline-min-height: 300px;
         grid-template-rows: 20% 30% 50%;
         
         h1 {
-            font-size: 48px;
+            font-size: 200%;
             text-align: center;
         }
 
@@ -69,10 +70,12 @@ $timeline-min-height: 300px;
     .profil-container {
         z-index: 1;
         max-width: 400px;
+        margin: auto;
         grid-column: 1/5;
         overflow: hidden;
         border-radius: 203px;
         aspect-ratio: 1/1;
+        width: 90%;
 
         filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .5));
         
@@ -92,7 +95,6 @@ $timeline-min-height: 300px;
 
         @include responsive($sm) {
             grid-column: 1 / -1;
-            margin: auto;
 
             img {
                 transform: none;
@@ -127,11 +129,15 @@ $timeline-min-height: 300px;
         
         img {
             object-fit: cover;
-            width: 150px;
-            height: 200px;
+            aspect-ratio: 3 / 4;
+            max-width: 150px;
             border-radius: 10px;
             box-shadow: 0 4px 4px 0 #00000044;
             margin: 5px 5px;
+
+            @include responsive($mobile) {
+                max-width: 130px;
+            }
         }
 
         @include responsive($md) {
@@ -165,20 +171,19 @@ $timeline-min-height: 300px;
 
     background-color: #333;
     overflow-y: hidden;
-    min-height: 12vh;
+    min-height: 200px;
     
     .links {
         margin: auto;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         align-items: flex-end;
-        gap: 15%;
+        gap: 5%;
         max-width: 1000px;
         padding: 0 2rem;
 
         .link-card {
-
             transform: translateY(60px);
             transition: transform .3s;
 
@@ -196,27 +201,28 @@ $timeline-min-height: 300px;
 
             &:hover {
                 transform: translateY(30px);
-                transition: transform .3s;
+            }
+
+            @include responsive($mobile) {
+                transform: translateY(90px);
+            }
+
+            @include responsive($xxs) {
+                transform: translateY(110px);
             }
         }
-    }    
+    }
 }
 
 .banner-container {
     z-index: 1;
-
-    .background {
-        position: absolute;
-        width: 100%;
-        height: 700px;
+    
+    .background, .background-shadow {
+        max-height: 700px;
         object-fit: cover;
-    }
-
-    .background-shadow {
-        position: absolute;
         width: 100%;
-        height: 700px;
-        object-fit: cover;
+        height: 100%;
+        position: absolute;
     }
 
     .logo-container {
@@ -225,10 +231,26 @@ $timeline-min-height: 300px;
         justify-content: center;
         
         position: relative;
+        margin: 0 1em;
         height: 500px;
 
         .hozen-logo {
             max-width: 100%;
+        }
+    }
+
+    @include responsive($mobile) {
+
+        .background, .background-shadow {
+            max-height: 500px;
+        }
+
+        .logo-container {
+            height: 300px;
+            
+            .hozen-logo {
+               max-width: 80%;
+            }
         }
     }
 }

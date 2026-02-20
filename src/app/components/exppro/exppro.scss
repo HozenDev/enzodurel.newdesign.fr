@@ -1,3 +1,5 @@
+@use "../../styles/shared.scss" as *;
+
 $tags-color: #777;
 $exppro-bg-color: #eee;
 $container-max-width: 1200px;
@@ -6,24 +8,23 @@ $container-max-width: 1200px;
     background-color: $exppro-bg-color;
     max-width: $container-max-width;
     margin: auto;
-    padding: 2rem;
+    padding: 1em;
     border-radius: 2rem 0;
-    transition: padding .3s;
 
-    &:hover {
-        padding: 2rem 4rem;
-    }
-    
     // small reset
-    h1, h2, h3, h4, p, ul {
+    h3, h4, p, ul {
         margin: .2em;
     }
 
     display: flex;
     flex-direction: row;
 
+    @include responsive($xs) {
+        flex-direction: column;
+    }
+
     .project-part {
-        flex: 1 1 auto;
+        flex: 0 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -33,6 +34,7 @@ $container-max-width: 1200px;
             display: flex;
             max-width: 120px;
             align-items: center;
+            margin: 2rem;
             
             a {
                 width: 100%;
@@ -57,13 +59,22 @@ $container-max-width: 1200px;
         .exppro-item {
             margin: 1rem;
 
+            .title {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: .5em 0;
+            }
+            
             .subtitle {
                 display: flex;
                 align-items: center;
+                flex-wrap: wrap;
 
                 .tags {
                     display: flex;
                     color: $tags-color;
+                    flex-wrap: wrap;
 
                     p::after {
                         content: ',';
@@ -72,17 +83,17 @@ $container-max-width: 1200px;
                     p:last-child::after {
                         content: '';
                     }
-
-                }
-
-                h4::after, .tags::after {
-                    content: '';
-                    border-right: solid 2px $tags-color;
-                    margin-left: .3rem;
                 }
 
                 .date {
-                    margin-left: .3rem;
+                    display: flex;
+                    flex-wrap: no-wrap;
+                }
+
+                .date::before, .tags::before {
+                    content: '';
+                    border-right: solid 2px $tags-color;
+                    margin: .3rem;
                 }
             }
         }

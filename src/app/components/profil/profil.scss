@@ -1,3 +1,5 @@
+@use "../../styles/shared.scss" as *;
+
 $photo-max-dim: 300px;
 $photo-border-radius: 150px;
 $profil-max-w: 1200px;
@@ -6,11 +8,16 @@ $photo-border-color: #EEE;
 
 .profil-container {
     margin: auto;
-    padding: 2rem;
+    padding: 0 1em;
+    padding-top: 50px;
     display: flex;
     align-items: center;
     max-width: $profil-max-w;
     gap: $profil-margin;
+
+    @include responsive($xs) {
+        flex-direction: column;
+    }
 
     .photo-container {
         max-width: $photo-max-dim;
@@ -40,15 +47,15 @@ $photo-border-color: #EEE;
         flex-direction: column;
 
         h1, h2 {
-            margin: .5rem 0;
+            margin: .5em 0;
         }
 
         p {
             // line-height: normal;
             // text-indent: 3em;
-            padding: 2rem;
+            padding: 1.5em;
             background-color: #f4f4f4;
-            border-radius: 2rem 2rem 2rem 0;
+            border-radius: 2em 2em 2em 0;
 
             transform: none;
             transition: transform .2s, filter .2s;

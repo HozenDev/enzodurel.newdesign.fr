@@ -1,18 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@use "app/styles/shared.scss" as *;
+
 $primary-font: 'Inter', sans-serif;
 
 .cv-title {
     width: fit-content;
-    margin: 1rem;
+    margin: 1em;
     margin-top: 0;
 }
 
 .cv-title::before {
     content: '';
     display: block;
-    transform: translateY(2rem) translateX(.5rem);
+    transform: translateY(1.5em) translateX(.5em);
     width: 100%;
-    border-bottom: solid 1rem #869bd055;
+    border-bottom: solid .75em #869bd055;
 }
 
 .white {
@@ -21,4 +23,8 @@ $primary-font: 'Inter', sans-serif;
 
 body {
     font-family: $primary-font;
+
+    @include responsive($xxs) {
+        font-size: 80%;
+    }
 }

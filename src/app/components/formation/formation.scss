@@ -4,17 +4,17 @@ $container-max-width: 1200px;
 $bg-color: #eee;
 
 $timeline-min-height: 250px;
-$timeline-min-height-vertical: 600px;
+$timeline-min-height-vertical: 400px;
 
 .formation-container {
     background-color: $bg-color;
     max-width: $container-max-width;
 
-    margin: 2rem auto;
+    margin: 2em auto;
     margin-bottom: 0;
-    padding: 2rem;
+    padding: 1em;
 
-    border-radius: 2rem 0;
+    border-radius: 2em 0;
     
     display: grid;
     grid-template-columns: auto;
@@ -68,7 +68,15 @@ $timeline-min-height-vertical: 600px;
             .cours-info {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
+
+                @include responsive($xs) {
+                    grid-template-columns: auto;
+                }
             }
+        }
+
+        @include responsive($sm) {
+            grid-template-columns: auto;
         }
     }
 }
