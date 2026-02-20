@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Timeline } from '../../components/timeline/timeline';
 import { TimelineService } from '../../core/services/timeline';
 
@@ -8,6 +8,10 @@ import { TimelineService } from '../../core/services/timeline';
   templateUrl: './formation.html',
   styleUrl: './formation.scss',
 })
-export class Formation {
+export class Formation implements OnInit {
     timelineService = inject(TimelineService);
+
+    ngOnInit() {
+	this.timelineService.clearHoveredEvent();
+    }
 }

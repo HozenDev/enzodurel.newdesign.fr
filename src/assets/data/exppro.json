@@ -1,31 +1,31 @@
 [
-    {
-	"id": 0,
-	"name": "Stage Ingénieur Logiciels SIAS DeepLearning",
-	"company": "CLECIM",
-	"poste": "Développeur",
-	"tags": ["C", "C++", "Python", "TCP/IP", "wxWidgets"],
-	"begin_date": "2024-03-01",
-	"end_date": "2024-08-01",
-	"missions": [
-	    "Gestion matérielle d'une solution industrielle de contrôle de qualité de métal.",
-	    "Développement de fonctionnalité pour la solution (backup, traduction, benchmarks).",
-	    "Conception et développement de la communication interne et externe avec la ligne (TCP/IP).",
-	    "Travail en méthode scrum (réunion hebdomadaire entre services et quotidienne intra-équipe)."
-	]
-    },
-    {
-	"id": 1,
-	"name": "Projet de suivi d'humain par caméra 2D en temps réel",
-	"company": "Fluidy",
-	"poste": "Développeur",
-	"tags": ["Python", "mPython", "BluetoothLE", "Computer Vision", "Embarqué"],
-	"begin_date": "2024-02-01",
-	"end_date": "2024-03-01",
-	"missions": [
-	    "Développement d'une solution logicielle de suivi d'un cadis de golf et de son propriétaire.",
-	    "Modèle TinyML de reconnaissance et localisation d'unhumain sur un terrain de golf (Nicla Vision, 500kB RAM).",
-	    "Développement de l'interface de communication bluetooth entre la puce et le cadis de golf pour son déplacement."
-	]
-    }
+  {
+    "id": 0,
+    "name": "Stage ingénieur logiciel SIAS Deep Learning",
+    "company": "CLECIM",
+    "poste": "Développeur",
+    "tags": ["C", "C++", "Python", "TCP/IP", "wxWidgets"],
+    "begin_date": "2024-03-01",
+    "end_date": "2024-08-01",
+    "missions": [
+      "Gestion matérielle d'une solution industrielle de contrôle de la qualité du métal.",
+      "Développement de fonctionnalités pour la solution (backup, traduction, benchmarks).",
+      "Conception et développement de la communication interne et externe avec la ligne (TCP/IP).",
+      "Travail en méthode Scrum (réunion hebdomadaire entre services et quotidienne au sein de l'équipe)."
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Projet de suivi d'humains par caméra 2D en temps réel",
+    "company": "Fluidy",
+    "poste": "Développeur",
+    "tags": ["Python", "mPython", "Bluetooth LE", "Computer Vision", "Embarqué"],
+    "begin_date": "2024-02-01",
+    "end_date": "2024-03-01",
+    "missions": [
+      "Développement d'une solution logicielle de suivi d'un caddie de golf et de son propriétaire.",
+      "Modèle TinyML de reconnaissance et localisation d'un humain sur un terrain de golf (Nicla Vision, 500 ko de RAM).",
+      "Développement de l'interface de communication Bluetooth entre la puce et le caddie de golf pour son déplacement."
+    ]
+  }
 ]

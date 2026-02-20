@@ -1,8 +1,8 @@
 <section class="formation-container">
-  <h2 class="cv-title">Formation</h2>
-  <app-timeline
-      urlEvent="assets/data/timeline_cv.json"
-      class="frise-container"> </app-timeline>
+<h2 class="cv-title">Formation</h2>
+<app-timeline urlEvent="assets/data/timeline_cv.json" dotBgColor="#eee" dotBorderColor="#869bd0"
+    curveColor="#869bd0" class="frise-container">
+  </app-timeline>
   @if (timelineService.activeEvent(); as event) {
   <section class="formation-info">
     <div class="main-info">

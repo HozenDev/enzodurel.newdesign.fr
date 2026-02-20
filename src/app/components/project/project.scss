@@ -29,9 +29,21 @@ $project-font-color: var(--project-font-color);
     @include responsive($md) {
         flex-direction: column;
         height: 500px;
+
+        .media {
+            display: none;
+        }
+        
+        &:hover {
+            .media {
+                display: initial;
+            }
+        }
     }
 
     transition: height .5s;
+
+    
 }
 
 .project-card:hover {

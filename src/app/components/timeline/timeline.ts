@@ -33,6 +33,11 @@ export class Timeline implements OnInit {
     card_offset_y = input<number>(40);
     svg_height = input<string>("300px");
 
+    // color
+    curveColor = input<string>("#5D5D5D");
+    dotBgColor = input<string>("white");
+    dotBorderColor = input<string>("#5D5D5D");
+
     ngOnInit() {
 	this.parentWidth.set(this.wrapper.nativeElement.clientWidth);
 	const w = this.parentWidth();

@@ -10,7 +10,7 @@
 	{ "name": "Dactylographie", "type": "tool", "lvl": 80, "icon": "tool.png" },
 	{ "name": "Java", "type": "code", "lvl": 50, "icon": "code.png" },
 	{ "name": "C#", "type": "code", "lvl": 60, "icon": "code.png" },
-	{ "name": "Tensorflow", "type": "api", "lvl": 60, "icon": "api.png" },
+	{ "name": "TensorFlow", "type": "api", "lvl": 60, "icon": "api.png" },
 	{ "name": "NoSQL (MongoDB)", "type": "code", "lvl": 60, "icon": "code.png" },
 	{ "name": "Node.js", "type": "tool", "lvl": 70, "icon": "tool.png" },
 	{ "name": "Trello", "type": "tool", "lvl": 90, "icon": "tool.png" },
@@ -20,13 +20,13 @@
 	{ "name": "Rust", "type": "code", "lvl": 30, "icon": "code.png" },
 	{ "name": "Photoshop", "type": "tool", "lvl": 60, "icon": "tool.png" },
 	{ "name": "Figma", "type": "tool", "lvl": 60, "icon": "tool.png" },
-	{ "name": "DaVinci", "type": "tool", "lvl": 40, "icon": "tool.png" },
+	{ "name": "DaVinci Resolve", "type": "tool", "lvl": 40, "icon": "tool.png" },
 	{ "name": "Angular", "type": "api", "lvl": 70, "icon": "api.png" }
     ],
     "languages": [
 	{ "name": "Anglais", "lvl": "Courant", "icon": "english.png", "certifications": [
-	    { "name": "TOEIC", "score": 910 },
-	    { "name": "TOEFL", "score": 91 }
+            { "name": "TOEIC", "score": 910 },
+            { "name": "TOEFL", "score": 91 }
 	]},
 	{ "name": "Espagnol", "lvl": "Intermédiaire", "icon": "spain.png"},
 	{ "name": "Français", "lvl": "Natif", "icon": "france.png"}

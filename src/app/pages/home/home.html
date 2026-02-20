@@ -13,32 +13,36 @@
         <div id="presentation">
             <h1 class="white">Enzo "Hozen" Durel</h1>
             <p class="white">
-                Salut, moi c’est Enzo, je suis ingénieur en informatique. J’ai étudié en France, au Japon et aux
-                Etats-Unis. Petit, je rêvais d’être inventeur, de pouvoir créer des solutions de mes propres mains pour
-                aider mon prochain. Et maintenant ?
+                Salut, moi c’est Enzo. Enfant, je passais mon temps à imaginer des machines incroyables : je voulais
+                être inventeur,
+                créer des objets de mes mains pour changer un peu le monde à mon échelle. Après avoir parcouru la
+                France, le Japon
+                et les États-Unis pour me former, je me suis rendu compte que mes outils avaient simplement changé.
             </p>
             <p>
-                Aujourd’hui, j’en ai le pouvoir par mes compétences en informatique. Je peux et je crée tout ce qui me
-                vient à l’esprit. Beaucoup de choses futiles, mais quelques-unes qui ont permis d’aider ma famille, des
-                amis, des collègues ou de parfaits inconnus. Alors je me dis que j’ai réussi à devenir ce que petit je
-                rêvais d’être: un créateur.
+                Aujourd'hui, ingénieur en informatique, j'ai la liberté de transformer une idée abstraite en une réalité
+                concrète.
+                Parfois c'est expérimental, souvent c'est utile, mais c'est toujours animé par la même envie : mettre la
+                technologie
+                au service de l'humain. Au fond, je crois que j'ai fini par l'être, cet inventeur dont je rêvais.
             </p>
         </div>
-        <app-timeline urlEvent="assets/data/timeline.json" id="frise-container"> </app-timeline>
+        <app-timeline urlEvent="assets/data/timeline.json" class="frise-container" dotBgColor="#eee" dotBorderColor="#647F92"
+            curveColor="#bbb"> </app-timeline>
         <div id="paragraph-container">
             <p>
-                Une soif d’apprendre, de comprendre et de me rapprocher de la vérité. Je suis passioné par la
-                créativité: je me plonge dans une oeuvre et j’admire la réflexion de la personne ou du groupe d’individu
-                qui ont mis tout leur coeur pour arriver à ce résultat.
+                Je suis animé par une soif constante d’apprendre, de comprendre et de chercher ce qui est juste.
+                Passionné par la créativité sous toutes ses formes, j’aime m’immerger dans une œuvre pour y déceler
+                la réflexion et le cœur que chaque créateur y a insufflés pour atteindre son idéal.
             </p>
             <p>
-                Je fonctionne de la même façon professionnellement, curieux de chaque opinion et de chaque goute de
-                sueur qui façonne la réussite d’un projet.
+                C’est cette même approche qui guide mon parcours professionnel : je suis curieux de chaque point de vue
+                et respectueux de chaque goutte de sueur qui façonne la réussite d’un projet collectif.
             </p>
             <p>
-                Je ne suis qu’un rêveur qui s’est formé techniquement dans un domaine où chaque avancée défi ce que nous
-                pouvions penser pouvoir réaliser. Mais ce sont ces rêves qui m’ont apportés rigueur, passion et
-                curiosité; des qualités qui ont bâtis mon parcours et mon être.
+                Au fond, je ne suis qu’un rêveur qui s’est armé de technique dans un domaine où chaque avancée
+                défie nos limites. Ce sont ces rêves qui m’ont apporté rigueur, passion et curiosité — des piliers
+                qui ont bâti mon parcours et qui définissent aujourd’hui celui que je suis.
             </p>
         </div>
         <div id="photos-container">
@@ -51,14 +55,15 @@
 </section>
 
 <section id="links-container">
-  <div class="round-border">
-    <svg viewBox="0 30 1440 320" preserveAspectRatio="none" height="300px" width="100%" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#eee"
-            d="M0,160L80,176C160,192,320,224,480,213.3C640,203,800,149,960,128C1120,107,1280,117,1360,122.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
-        </path>
-    </svg>
-        </div>
-        <div id="links">
+    <div class="round-border">
+        <svg viewBox="0 30 1440 320" preserveAspectRatio="none" height="300px" width="100%"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="#eee"
+                d="M0,160L80,176C160,192,320,224,480,213.3C640,203,800,149,960,128C1120,107,1280,117,1360,122.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+            </path>
+        </svg>
+    </div>
+    <div id="links">
         <a class="link-card" routerLink="/portfolio">
             <img src="assets/logos/portfolio_logo.png" alt="" />
         </a>

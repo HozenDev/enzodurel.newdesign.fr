@@ -1,11 +1,15 @@
 <div #timelineWrapper class="timeline-wrapper">
     <svg class="timeline-svg">
-        <path #timelinePath [attr.d]="pathD()" class="timeline-path"></path>
+      <path #timelinePath
+            [style.stroke]="curveColor()"
+            [attr.d]="pathD()"
+            class="timeline-path"></path>
 
         @for (p of renderedPoints; track $index) {
         <g>
-          <circle [attr.cx]="p.x!" [attr.cy]="p.y!" r="10"
-                  class="timeline-dot"
+          <circle [attr.cx]="p.x!" [attr.cy]="p.y!" r="10" class="timeline-dot"
+                  [style.stroke]="dotBorderColor()"
+                  [style.fill]="dotBgColor()"
                   (click)="timelineService.setHoveredEvent(p)">
           </circle>
           <foreignObject [attr.x]="p.x! + card_offset_x()"
