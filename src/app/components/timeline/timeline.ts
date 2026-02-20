@@ -74,7 +74,6 @@ export class Timeline implements OnInit {
 		h = this.parentHeight() - (p.y + this.card_offset_y());
 	    }
 	}
-	console.log("h =", h);
 	return h;
     }
 
@@ -88,7 +87,6 @@ export class Timeline implements OnInit {
 	else {
 	    w = this.parentWidth() / this.renderedPoints.length;
 	}
-	console.log("w =", w);
 	return w;
     }
 

@@ -3,27 +3,34 @@
 $container-max-width: 1200px;
 $bg-color: #eee;
 
+$timeline-min-height: 250px;
+$timeline-min-height-vertical: 600px;
+
 .formation-container {
     background-color: $bg-color;
     max-width: $container-max-width;
+
     margin: 2rem auto;
     margin-bottom: 0;
     padding: 2rem;
-    transition: padding .3s;
-
-    &:hover {
-        padding: 2rem 4rem;
-    }
 
     border-radius: 2rem 0;
-
+    
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 250px 1fr;
+    grid-template-rows: auto $timeline-min-height 1fr;
+    
+    @include responsive($mobile) {
+        grid-template-rows: auto $timeline-min-height-vertical 1fr;
+    }
 
     .frise-container {
         z-index: 0;
-        transform: translateY(-20px);
+
+        @include responsive(600px) {
+            transform: translateX(-20%);
+            min-height: 600px;
+        }
     }
 
     .formation-info {

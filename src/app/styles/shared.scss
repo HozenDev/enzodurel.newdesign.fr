@@ -13,6 +13,10 @@ $md: 1280px;
 $lg: 1920px;
 $xl: 5000px;
 
+$mobile: 600px;
+$tablet: 900px;
+$desktop: 1920px;
+
 @mixin responsive($query) {
     @media ( max-width: + $query ) {
         @content;

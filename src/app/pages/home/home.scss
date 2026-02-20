@@ -1,6 +1,7 @@
 @use "../../styles/shared.scss" as *;
 
 $timeline-vertical-height: 600px;
+$timeline-min-height: 300px;
 
 .resume-container {
     background-color: #EEE;
@@ -27,7 +28,7 @@ $timeline-vertical-height: 600px;
     margin: auto;
 
     @include responsive($sm) {
-        grid-template-rows: 405px auto 300px auto auto;
+        grid-template-rows: 405px auto $timeline-min-height auto auto;
     }
 
     @include responsive(600px) {
@@ -103,7 +104,7 @@ $timeline-vertical-height: 600px;
     .frise-container {
         z-index: 0;
         grid-column: 1 / -1;
-        min-height: 300px;
+        min-height: $timeline-min-height;
         transform: translateY(-180px);
 
         @include responsive($sm) {
