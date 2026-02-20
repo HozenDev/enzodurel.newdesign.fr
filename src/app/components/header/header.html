@@ -1,32 +1,38 @@
-<div class="header-container"
-     [class.header-hidden]="!isVisible()"
-     [class.header-visible]="isVisible()">
-    <header>
+<div class="header-container" [class.header-hidden]="!isVisible()" [class.header-visible]="isVisible()"
+    [class.menu-open]="isMenuOpen()">
+  <header>
+        @if (!isMobile()) {
         <nav class="right">
             <ul>
-                <li>
-                    <a routerLink="/">Home</a>
-                </li>
-                <li>
-                    <a routerLink="/portfolio">Portfolio</a>
-                </li>
-                <li>
-                    <a routerLink="/cv">CV</a>
-                </li>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/portfolio">Portfolio</a></li>
+                <li><a routerLink="/cv">CV</a></li>
             </ul>
         </nav>
         <nav class="center">
-            <img class="logo" src="assets/logos/hozen_emacs_logo_zen.png" alt="" />
+            <img class="logo" src="assets/logos/hozen_emacs_logo_zen.png" alt="Logo" />
         </nav>
         <nav class="left">
             <ul>
-              <li>
-                <a routerLink="/">Freelance</a>
-              </li>
-              <li>
-                <a routerLink="/">Contact</a>
-              </li>
+                <li><a routerLink="/">Freelance</a></li>
+                <li><a routerLink="/">Contact</a></li>
             </ul>
         </nav>
+        } @else {
+        <nav class="center">
+            <img class="logo" src="assets/logos/hozen_emacs_logo_zen.png" alt="Logo" />
+        </nav>
+        <button class="burger-btn" (click)="toggleMenu()">
+            {{ isMenuOpen() ? '✕' : '☰' }}
+        </button>
+
+        <div class="mobile-menu" [class.open]="isMenuOpen()">
+            <a routerLink="/" (click)="toggleMenu()">Home</a>
+            <a routerLink="/portfolio" (click)="toggleMenu()">Portfolio</a>
+            <a routerLink="/cv" (click)="toggleMenu()">CV</a>
+            <a routerLink="/" (click)="toggleMenu()">Freelance</a>
+            <a routerLink="/" (click)="toggleMenu()">Contact</a>
+        </div>
+        }
     </header>
 </div>

@@ -64,10 +64,11 @@
 
         // Logo section style
         nav.center {
-            text-align: center;
+            align-items: center;
+            justify-content: center;
 
             .logo {
-                max-height: 3rem;
+                max-height: 3em;
             }
         }
 
@@ -85,5 +86,47 @@
         &:hover {
             // background-color: #EFEFEF;
         }
+
+        // Réorganisation Mobile
+        @include responsive($sm) {
+            display: flex;
+            justify-content: space-between; // Logo à gauche, Burger à droite
+            
+            .burger-btn {
+                order: 2;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                margin: 0 1em;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 3rem);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+
+    &.open {
+        transform: translateX(0);
+    }
+
+    a {
+        font-size: 1.5rem;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
     }
 }

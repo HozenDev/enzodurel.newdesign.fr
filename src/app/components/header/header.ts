@@ -1,5 +1,7 @@
-import { Component, signal, HostListener } from '@angular/core';
+import { Component, signal, inject, HostListener } from '@angular/core';
+import { WindowService } from '../../core/services/window';
 import { RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-header',
@@ -9,23 +11,25 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
     // Signal to track if the header is visible
+    windowService = inject(WindowService);
+
+    isMobile(): boolean {
+	return this.windowService.isMobile();
+    }
+    
     isVisible = signal(true);
+    isMenuOpen = signal(false);
     private lastScrollTop = 0;
 
+    toggleMenu() {
+	this.isMenuOpen.update(v => !v);
+    }
+    
     @HostListener('window:scroll', [])
     onWindowScroll() {
-	const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-	// 1. Scrolling Down -> Hide Header
-	if (currentScroll > this.lastScrollTop && currentScroll > 50) {
-	    this.isVisible.set(false);
-	} 
-	// 2. Scrolling Up -> Show Header
-	else {
-	    this.isVisible.set(true);
-	}
-
-	// Update last scroll position (avoiding negative values on mobile)
-	this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        if (this.isMenuOpen()) return; // Ne pas cacher si le menu est ouvert
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        this.isVisible.set(currentScroll <= this.lastScrollTop || currentScroll <= 50);
+        this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }
 }
