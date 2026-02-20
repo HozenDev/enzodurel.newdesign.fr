@@ -12,10 +12,10 @@
                   [style.fill]="dotBgColor()"
                   (click)="timelineService.setHoveredEvent(p)">
           </circle>
-          <foreignObject [attr.x]="p.x! + card_offset_x()"
+          <foreignObject [attr.x]="cardOffsetX(p)"
                          [attr.y]="p.y! + card_offset_y()"
-                         width="100px"
-                         height="50%">
+                         [attr.width]="cardWidth(p)"
+                         [attr.height]="cardHeight(p)">
             <div class="timeline-card">
               @if (show_date() && p.date) {<p>{{p.date}}</p>}
               @if (show_title()) {<strong>{{p.title}}</strong>}

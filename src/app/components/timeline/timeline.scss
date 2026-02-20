@@ -3,16 +3,23 @@
 $timeline-color: #5D5D5D;
 $timeline-fill-dot: white;
 
-$timeline-height: 500px;
+:host {
+    overflow: visible;
+}
 
 .timeline-wrapper {
-    height: $timeline-height;
+    height: 100%;
+    overflow: visible;
 }
 
 .timeline-svg {
     height: 100%;
     width: 100%;
     overflow: visible;
+
+    foreignObject {
+        display: flex;
+    }
 }
 
 .timeline-path {
@@ -39,7 +46,10 @@ $timeline-height: 500px;
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100%;
+    width: 100%;
     font-size: 12px;
+    overflow: visible;
 
     p {
         margin-top: 0;

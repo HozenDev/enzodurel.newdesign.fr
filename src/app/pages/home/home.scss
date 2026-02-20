@@ -1,6 +1,8 @@
 @use "../../styles/shared.scss" as *;
 
-#resume-container {
+$timeline-vertical-height: 600px;
+
+.resume-container {
     background-color: #EEE;
     padding-bottom: 2rem;
 }
@@ -15,24 +17,24 @@
     }
 }
 
-#resume {
+.resume {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     grid-gap: 15px;
-    grid-template-rows: 405px 100px auto;
+    grid-template-rows: auto 100px auto;
 
     max-width: $content-width;
     margin: auto;
 
-    @include responsive($md) {
-        grid-template-rows: 405px 100px auto auto;
-    }
-
     @include responsive($sm) {
-        grid-template-rows: 405px auto auto auto auto;
+        grid-template-rows: 405px auto 300px auto auto;
     }
 
-    #presentation {
+    @include responsive(600px) {
+        grid-template-rows: 405px auto $timeline-vertical-height auto auto;
+    }
+
+    .presentation {
         z-index: 0;
         grid-column: 5 / -1;
         display: grid;
@@ -65,13 +67,12 @@
 
     .profil-container {
         z-index: 1;
-        max-width: 405px;
-        max-height: 405px;
-        margin: 20px;
-        grid-column: 1 / 5;
+        max-width: 400px;
+        grid-column: 1/5;
         overflow: hidden;
         border-radius: 203px;
         aspect-ratio: 1/1;
+
         filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .5));
         
         img {
@@ -100,15 +101,23 @@
 
 
     .frise-container {
+        z-index: 0;
         grid-column: 1 / -1;
-        transform: translate(0, -130px);
+        min-height: 300px;
+        transform: translateY(-180px);
 
         @include responsive($sm) {
             transform: none;
         }
+        
+        @include responsive(600px) {
+            transform: translateX(-20%);
+            min-height: $timeline-vertical-height;
+        }
     }
 
-    #photos-container {
+    .photos-container {
+        z-index: 1;
         display: flex;
         flex-wrap: wrap;
         grid-column: 6 / -1;
@@ -129,7 +138,8 @@
         }
     }
 
-    #paragraph-container {
+    .paragraph-container {
+        z-index: 1;
         grid-column: 1 / 6;
         margin: auto;
 
@@ -150,13 +160,13 @@
     }
 }
 
-#links-container {
+.links-container {
 
     background-color: #333;
     overflow-y: hidden;
     min-height: 12vh;
     
-    #links {
+    .links {
         margin: auto;
         display: flex;
         flex-direction: row;
@@ -191,36 +201,33 @@
     }    
 }
 
-#banner-container {
+.banner-container {
     z-index: 1;
 
-    #background {
+    .background {
         position: absolute;
         width: 100%;
         height: 700px;
         object-fit: cover;
     }
 
-    #background-shadow {
+    .background-shadow {
         position: absolute;
         width: 100%;
         height: 700px;
         object-fit: cover;
     }
 
-    #logo-container {
+    .logo-container {
         display: flex;
         align-items: center;
         justify-content: center;
         
         position: relative;
-        height: 100%;
         height: 500px;
 
-        #hozen-logo {
-            margin: 20px;
-            width: 100%;
-            max-width: 1000px;
+        .hozen-logo {
+            max-width: 100%;
         }
     }
 }
