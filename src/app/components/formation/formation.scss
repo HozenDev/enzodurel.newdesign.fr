@@ -27,9 +27,9 @@ $timeline-min-height-vertical: 600px;
     .frise-container {
         z-index: 0;
 
-        @include responsive(600px) {
+        @include responsive($mobile) {
             transform: translateX(-20%);
-            min-height: 600px;
+            min-height: $timeline-min-height-vertical;
         }
     }
 
