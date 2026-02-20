@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Profil } from '../../components/profil/profil';
 import { Exppro } from '../../components/exppro/exppro';
 import { Competences } from '../../components/competences/competences';
@@ -11,6 +11,9 @@ import { Contact } from '../../components/contact/contact';
   templateUrl: './cv.html',
   styleUrl: './cv.scss',
 })
-export class Cv {
+export class Cv implements OnInit {
 
+    ngOnInit() {
+	// todo
+    }
 }
