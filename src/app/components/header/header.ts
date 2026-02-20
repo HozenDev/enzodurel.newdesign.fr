@@ -1,4 +1,4 @@
-import { Component, signal, inject, HostListener } from '@angular/core';
+import { Component, Renderer2, effect, signal, inject, HostListener } from '@angular/core';
 import { WindowService } from '../../core/services/window';
 import { RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -12,14 +12,25 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class Header {
     // Signal to track if the header is visible
     windowService = inject(WindowService);
+    isVisible = signal(true);
+    isMenuOpen = signal(false);
+    private lastScrollTop = 0;
+    private renderer = inject(Renderer2);
+
+    constructor() {
+	// Cet effet surveille isMenuOpen
+	effect(() => {
+	    if (this.isMenuOpen()) {
+		this.renderer.addClass(document.body, 'no-scroll');
+	    } else {
+		this.renderer.removeClass(document.body, 'no-scroll');
+	    }
+	});
+    }
 
     isMobile(): boolean {
 	return this.windowService.isMobile();
     }
-    
-    isVisible = signal(true);
-    isMenuOpen = signal(false);
-    private lastScrollTop = 0;
 
     toggleMenu() {
 	this.isMenuOpen.update(v => !v);

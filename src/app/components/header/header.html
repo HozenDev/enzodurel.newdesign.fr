@@ -1,5 +1,5 @@
 <div class="header-container" [class.header-hidden]="!isVisible()" [class.header-visible]="isVisible()"
-    [class.menu-open]="isMenuOpen()">
+    [class.menu-open]="isMenuOpen()" [style.background]="isMenuOpen() ? 'white' : 'rgba(255, 255, 255, 0.7)'">
   <header>
         @if (!isMobile()) {
         <nav class="right">

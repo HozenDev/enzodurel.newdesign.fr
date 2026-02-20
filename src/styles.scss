@@ -21,6 +21,12 @@ $primary-font: 'Inter', sans-serif;
     color: white;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  /* Optionnel : évite le saut de mise en page si la barre de défilement disparaît */
+  padding-right: var(--scrollbar-width, 0px); 
+}
+
 body {
     font-family: $primary-font;
 

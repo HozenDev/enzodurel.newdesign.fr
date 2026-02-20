@@ -32,7 +32,7 @@ $timeline-min-height: 300px;
         grid-template-rows: auto auto $timeline-min-height auto auto;
     }
 
-    @include responsive(600px) {
+    @include responsive($mobile) {
         grid-template-rows: auto auto $timeline-vertical-height auto auto;
     }
 
@@ -40,7 +40,7 @@ $timeline-min-height: 300px;
         z-index: 0;
         grid-column: 5 / -1;
         display: grid;
-        grid-template-rows: 20% 30% 50%;
+        grid-template-rows: 22% 30% auto;
         
         h1 {
             font-size: 200%;
@@ -113,7 +113,7 @@ $timeline-min-height: 300px;
             transform: none;
         }
         
-        @include responsive(600px) {
+        @include responsive($mobile) {
             transform: translateX(-20%);
             min-height: $timeline-vertical-height;
         }
