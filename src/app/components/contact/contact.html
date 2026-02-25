@@ -5,56 +5,70 @@
         <div class="contact-info">
             <h2>Contactez-moi!</h2>
             <p>
-                Envie de lancer le prochain grand projet ou de parler de la dernière techno à la mode ? Remplissez le formulaire ou
+                Envie de lancer le prochain grand projet ou de parler de la dernière techno à la mode ? Remplissez le
+                formulaire ou
                 faites-moi signe sur les réseaux. Promis, je réponds plus vite qu'un script bien optimisé.
             </p>
 
             <div class="links">
-              <div class="link-group">
-                <img src="assets/logos/email.svg" alt="" />
-                <a href="mailto:enzo.durel.dev@gmail.com">enzo.durel.dev@gmail.com</a>
-              </div>
-              <div class="link-group">
-                <img src="assets/logos/linkedin.svg" alt="" />
-                <a href="https://www.linkedin.com/in/enzo-durel-996998292">LinkedIn</a>
-              </div>
+                <div class="link-group">
+                    <img src="assets/logos/email.svg" alt="" />
+                    <a href="mailto:enzo.durel.dev@gmail.com">enzo.durel.dev@gmail.com</a>
+                </div>
+                <div class="link-group">
+                    <img src="assets/logos/linkedin.svg" alt="" />
+                    <a href="https://www.linkedin.com/in/enzo-durel-996998292">LinkedIn</a>
+                </div>
             </div>
         </div>
 
         <!-- FORM -->
         <div class="contact-form">
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="contactForm" #formElement (ngSubmit)="onSubmit(formElement)">
 
-                <!-- Line 1: Name + Email -->
                 <div class="row">
                     <div class="field">
-                        <input type="text" placeholder="Nom" formControlName="name" />
+                        <input name="name" type="text" placeholder="Nom" formControlName="name"
+                            [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" />
+                        <small *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">Le nom est
+                            requis.</small>
                     </div>
 
                     <div class="field">
-                        <input type="email" placeholder="Email" formControlName="email" />
+                        <input name="email" type="email" placeholder="Email" formControlName="email"
+                            [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" />
+                        <small
+                            *ngIf="contactForm.get('email')?.errors?.['required'] && contactForm.get('email')?.touched">L'email
+                            est requis.</small>
+                        <small
+                            *ngIf="contactForm.get('email')?.errors?.['email'] && contactForm.get('email')?.touched">Format
+                            d'email invalide.</small>
                     </div>
                 </div>
 
-                <!-- Line 2: Subject -->
                 <div class="row">
                     <div class="field full">
-                        <input type="text" placeholder="Sujet"  formControlName="subject" />
-                    </div>
+                        <input name="subject" type="text" placeholder="Sujet" formControlName="subject"
+                               [class.error]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched" />
+                        <small *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">Le sujet est
+                            requis.</small>
+                        </div>
                 </div>
 
-                <!-- Line 3: Message -->
                 <div class="row">
                     <div class="field full">
-                        <textarea rows="5" placeholder="Écris ton message..." formControlName="message"></textarea>
-                    </div>
+                        <textarea name="message" rows="5" placeholder="Écris ton message..." formControlName="message"
+                            [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+                        <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">Le message est
+                            requis.</small>
+                        </div>
                 </div>
 
-                <!-- Line 4: Submit -->
                 <div class="row">
-                    <button type="submit">Envoyer</button>
-                    </div>
-                    
+                    <button type="submit" [disabled]="contactForm.invalid || isSending">
+                        {{ isSending ? 'Envoi en cours...' : 'Envoyer' }}
+                    </button>
+                </div>
             </form>
         </div>
     </div>
